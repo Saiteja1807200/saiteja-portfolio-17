@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SplitText from './SplitText';
+import Aurora from './Aurora';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -12,8 +14,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="relative py-20 overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <Aurora 
+          colorStops={["#5227FF", "#7cff67", "#5227FF"]}
+          amplitude={1.2}
+          blend={0.6}
+          speed={1.5}
+        />
+      </div>
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -31,7 +41,17 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Hi, I'm <span className="text-gradient">Akinepelli Saiteja</span>
+            Hi, I'm{' '}
+            <SplitText 
+              text="Akinepelli Saiteja"
+              className="text-gradient inline"
+              delay={50}
+              duration={0.8}
+              splitType="chars"
+              from={{ opacity: 0, y: 50, rotateX: -90 }}
+              to={{ opacity: 1, y: 0, rotateX: 0 }}
+              threshold={0.8}
+            />
           </motion.h1>
           
           <motion.p 
