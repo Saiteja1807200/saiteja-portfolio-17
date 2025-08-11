@@ -14,13 +14,13 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
+    <section className="relative py-20 overflow-hidden min-h-screen">
+      <div className="absolute inset-0 opacity-70">
         <Aurora 
           colorStops={["#5227FF", "#7cff67", "#5227FF"]}
-          amplitude={1.2}
-          blend={0.6}
-          speed={1.5}
+          amplitude={2.0}
+          blend={0.8}
+          speed={1.8}
         />
       </div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -42,16 +42,18 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             Hi, I'm{' '}
-            <SplitText 
-              text="Akinepelli Saiteja"
-              className="text-gradient inline"
-              delay={50}
-              duration={0.8}
-              splitType="chars"
-              from={{ opacity: 0, y: 50, rotateX: -90 }}
-              to={{ opacity: 1, y: 0, rotateX: 0 }}
-              threshold={0.8}
-            />
+            <span className="relative z-20">
+              <SplitText 
+                text="Akinepelli Saiteja"
+                className="text-gradient inline font-bold drop-shadow-lg"
+                delay={50}
+                duration={0.8}
+                splitType="chars"
+                from={{ opacity: 0, y: 50, rotateX: -90 }}
+                to={{ opacity: 1, y: 0, rotateX: 0 }}
+                threshold={0.8}
+              />
+            </span>
           </motion.h1>
           
           <motion.p 

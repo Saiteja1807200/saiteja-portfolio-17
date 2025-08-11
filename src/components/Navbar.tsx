@@ -57,16 +57,20 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
-                'font-medium transition-all duration-200 animated-underline py-1',
+                'font-medium transition-all duration-300 animated-underline py-1 hover:scale-110 hover:-translate-y-1 transform',
+                'hover:shadow-lg hover:shadow-primary/25 rounded-md px-3 py-2',
                 location.pathname === link.path
-                  ? 'text-primary after:w-full'
-                  : 'text-foreground/80 hover:text-foreground'
+                  ? 'text-primary after:w-full bg-primary/10 scale-105'
+                  : 'text-foreground/80 hover:text-foreground hover:bg-primary/5'
               )}
+              style={{
+                animationDelay: `${index * 100}ms`
+              }}
             >
               {link.title}
             </Link>
