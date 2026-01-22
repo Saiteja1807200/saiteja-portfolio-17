@@ -59,7 +59,7 @@ const About = () => {
           </motion.p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 items-start">
           <motion.div 
             className="space-y-6"
             initial={{ opacity: 0, x: -30 }}
