@@ -4,7 +4,6 @@ import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SplitText from './SplitText';
 import Aurora from './Aurora';
-import profileImage from '@/assets/saiteja-profile.jpg';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -25,22 +24,6 @@ const Hero = () => {
         />
       </div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Hero Profile Image Container */}
-        <motion.div 
-          className="flex justify-center mb-8"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="hero-image-container w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/30 shadow-xl">
-            <img 
-              src={profileImage} 
-              alt="Saiteja Akinepelli"
-              className="w-full h-full object-contain bg-background"
-            />
-          </div>
-        </motion.div>
-
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

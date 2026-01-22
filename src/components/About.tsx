@@ -89,7 +89,7 @@ const About = () => {
             <img 
               src={profileImage} 
               alt="Saiteja Akinepelli"
-              className="w-full h-96 object-cover object-center"
+              className="block w-full object-contain"
             />
           </motion.div>
         </div>
