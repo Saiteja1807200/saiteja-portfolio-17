@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, BookOpen, Users, MessageSquare } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import profileImage from '@/assets/saiteja-profile.png';
 
 const About = () => {
   const features = [
@@ -86,8 +87,8 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <img 
-              src="https://media.licdn.com/dms/image/v2/D4E03AQH8PwA8WT0Law/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700241967497?e=1748476800&v=beta&t=FJYvO_yv2g8qQaNF9hAvc0-tqFbYKmKYfDbos_OZc-c" 
-              alt="Akinepelli Saiteja"
+              src={profileImage} 
+              alt="Saiteja Akinepelli"
               className="w-full h-96 object-cover object-center"
             />
           </motion.div>

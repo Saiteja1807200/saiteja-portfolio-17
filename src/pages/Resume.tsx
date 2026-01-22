@@ -57,7 +57,7 @@ const ResumePage = () => {
   };
 
   const downloadResume = () => {
-    alert('Resume download functionality would be implemented here.');
+    window.open('https://drive.google.com/file/d/1oLwn1GiXvy0uzpJzH79dZwFNo8MjWwTD/view?usp=drivesdk', '_blank');
   };
 
   return (
