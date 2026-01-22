@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, BookOpen, Users, MessageSquare } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import profileImage from '@/assets/saiteja-profile.png';
+import profileImage from '@/assets/saiteja-profile.jpg';
 
 const About = () => {
   const features = [
