@@ -64,7 +64,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Button size="lg" asChild>
-              <a href="/contact">Get In Touch</a>
+              <Link to="/contact">Get In Touch</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="https://drive.google.com/file/d/1oLwn1GiXvy0uzpJzH79dZwFNo8MjWwTD/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">View Resume</a>
