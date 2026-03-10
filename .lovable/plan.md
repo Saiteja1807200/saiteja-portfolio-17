@@ -1,36 +1,44 @@
-## Plan: Update Skills Section for Full Stack Developer & ML Enthusiast
 
-### 1. Update Technical Skills progress bars (`src/components/Skills.tsx`)
 
-Replace current list with full-stack + ML relevant skills:
+# Fix Profile Image - Use Direct GitHub URL
 
-- **React / TypeScript** — 85%
-- **Python** — 90%
-- **PostgreSQL / SQL** — 85%
-- **Machine Learning (Scikit-learn)** — 80%
-- **REST APIs & Backend Services** — 80%
-- **Computer Vision (OpenCV)** — 75%
+## Problem Identified
+The screenshot shows a stock/placeholder image is being rendered instead of your actual profile photo. Both the About component (`src/components/About.tsx`) and the About page (`src/pages/About.tsx`) import from `src/assets/saiteja-profile.jpg`, but this local file appears to have been corrupted or replaced with a stock image.
 
-### 2. Update Soft Skills (keep mostly the same, minor tweak)
+## Solution
+Replace the local asset import with the direct GitHub raw URL in both files. This ensures:
+- The correct image is always displayed
+- No future accidental replacements can occur
+- The image source is permanent and reliable
 
-- Replace "Customer Service" with "Adaptability"
+## Files to Modify
 
-### 3. Replace Specialization Cards
+### 1. src/components/About.tsx (About Me section on homepage)
+- Remove the import statement for `profileImage` from local assets
+- Use the direct GitHub URL as the image source
 
-Remove "Quality Management" card. Update all 6 cards to:
+### 2. src/pages/About.tsx (Dedicated About page)
+- Remove the import statement for `profileImage` from local assets
+- Use the direct GitHub URL as the image source
 
-1. **Frontend Development** — React, TypeScript, Tailwind CSS, Responsive Design
-2. **Backend & Databases** — PostgreSQL, REST APIs, Authentication, Supabase
-3. **Machine Learning** — Scikit-learn, XGBoost, Model Evaluation, Exploratory data analysis.
-4. **Computer Vision & NLP** — OpenCV, Image Processing, Text Analysis.
-5. **Communication** — Technical Writing, Documentation, Cross-team Collaboration, Knowledge Sharing
+## Technical Details
 
-### 4. Update section subtitle
+**GitHub Raw Image URL:**
+```
+https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg
+```
 
-Change to: "Technical expertise spanning full-stack web development and machine learning, built through hands-on projects and academic training."
+**Changes in src/components/About.tsx:**
+- Line 6: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
+- Line 90: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
 
-### Icons
+**Changes in src/pages/About.tsx:**
+- Line 8: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
+- Line 92: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
 
-Update imports: replace `FileCheck` with `Server`, `Globe` or similar for Frontend/Backend cards. Add `Eye` for CV/NLP.
+## Benefits
+- Permanent, unchangeable image source
+- No dependency on local asset files
+- Consistent image across all sections
+- Prevents future accidental replacements or "improvements"
 
-Add emojis of professional, wherever need it
