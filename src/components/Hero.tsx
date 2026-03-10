@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import SplitText from './SplitText';
 import Aurora from './Aurora';
@@ -14,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden bg-background">
       <div className="absolute inset-0 opacity-70">
         <Aurora 
           colorStops={["#5227FF", "#7cff67", "#5227FF"]}
@@ -63,7 +64,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <Button size="lg" asChild>
-              <a href="/contact">Get In Touch</a>
+              <Link to="/contact">Get In Touch</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="https://drive.google.com/file/d/1oLwn1GiXvy0uzpJzH79dZwFNo8MjWwTD/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">View Resume</a>
