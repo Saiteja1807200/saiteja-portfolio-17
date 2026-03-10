@@ -69,13 +69,13 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold">My Journey</h3>
             <p className="text-foreground/80">
-              My passion for technology began during my early education, and I've been on a continuous learning path ever since. Currently pursuing my Masters in Computer Applications at Vaageswari College of Engineering, I'm focusing on developing expertise in Machine Learning and data analysis.
+              I hold a Master of Computer Applications from Vaageswari College of Engineering, where I developed a strong foundation in software development and machine learning. I've built full-stack web applications using React, PostgreSQL, and modern backend services — including a service marketplace platform featuring role-based authentication, booking workflows, and automated email notifications.
             </p>
             <p className="text-foreground/80">
-              I believe in the power of technology to transform lives and businesses. With my skills in Python, SQL, and quality management, I aim to contribute to innovative solutions that make a difference.
+              On the data science side, I've worked on computer vision and NLP projects using Python, OpenCV, Scikit-learn, and NLTK — from license plate recognition systems to recruitment fraud detection models. I'm well-versed in the Software Development Life Cycle, from requirement analysis through testing and deployment, and follow Agile practices to deliver iterative, high-quality results.
             </p>
             <p className="text-foreground/80">
-              Beyond technical skills, I value helping others and sharing knowledge. I enjoy supporting colleagues in their learning journey and believe that collaborative environments foster the best innovations.
+              I'm actively seeking opportunities as a Full Stack Developer or in Machine Learning roles where I can apply my technical skills to build impactful, scalable solutions.
             </p>
           </motion.div>
           
