@@ -1,63 +1,57 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Code, Database, Users, MessageCircle, LineChart, FileCheck } from 'lucide-react';
+import { Check, Code, Server, Brain, Eye, MessageCircle } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { cn } from '@/lib/utils';
 
 const Skills = () => {
   
   const technicalSkills = [
-    { name: 'Python', level: 90 },
-    { name: 'SQL', level: 85 },
-    { name: 'Machine Learning', level: 80 },
-    { name: 'Data Analysis', level: 75 },
-    { name: 'Computer Science Fundamentals', level: 90 },
+    { name: '⚛️ React / TypeScript', level: 85 },
+    { name: '🐍 Python', level: 90 },
+    { name: '🗄️ PostgreSQL / SQL', level: 85 },
+    { name: '🤖 Machine Learning (Scikit-learn)', level: 80 },
+    { name: '🔗 REST APIs & Backend Services', level: 80 },
+    { name: '👁️ Computer Vision (OpenCV)', level: 75 },
   ];
   
   const softSkills = [
-    { name: 'Communication', level: 90 },
-    { name: 'Problem Solving', level: 85 },
-    { name: 'Teamwork', level: 95 },
-    { name: 'Attention to Detail', level: 90 },
-    { name: 'Customer Service', level: 85 },
+    { name: '🗣️ Communication', level: 90 },
+    { name: '🧩 Problem Solving', level: 85 },
+    { name: '🤝 Teamwork', level: 95 },
+    { name: '🔍 Attention to Detail', level: 90 },
+    { name: '🔄 Adaptability', level: 85 },
   ];
   
   const specializations = [
     {
       icon: <Code className="h-10 w-10 text-primary mb-4" />,
-      title: 'Programming',
-      description: 'Proficient in Python programming for data science and ML applications',
-      items: ['Python', 'SQL', 'Data Structures', 'Algorithms']
+      title: '🖥️ Frontend Development',
+      description: 'Building responsive, modern user interfaces with component-driven architecture',
+      items: ['React', 'TypeScript', 'Tailwind CSS', 'Responsive Design']
     },
     {
-      icon: <Database className="h-10 w-10 text-primary mb-4" />,
-      title: 'Data Management',
-      description: 'Experience in database management and data quality control',
-      items: ['SQL', 'Data Quality', 'Data Cleaning', 'Database Design']
+      icon: <Server className="h-10 w-10 text-primary mb-4" />,
+      title: '⚙️ Backend & Databases',
+      description: 'Designing robust server-side logic and scalable database solutions',
+      items: ['PostgreSQL', 'REST APIs', 'Authentication', 'Supabase']
     },
     {
-      icon: <LineChart className="h-10 w-10 text-primary mb-4" />,
-      title: 'Machine Learning',
-      description: 'Building and evaluating ML models for various applications',
-      items: ['Supervised Learning', 'Data Analysis', 'Model Evaluation', 'Feature Engineering']
+      icon: <Brain className="h-10 w-10 text-primary mb-4" />,
+      title: '🤖 Machine Learning',
+      description: 'Building and evaluating ML models for real-world applications',
+      items: ['Scikit-learn', 'XGBoost', 'Model Evaluation', 'Exploratory Data Analysis']
     },
     {
-      icon: <FileCheck className="h-10 w-10 text-primary mb-4" />,
-      title: 'Quality Management',
-      description: 'Ensuring high standards in product and service quality',
-      items: ['Quality Control', 'Process Improvement', 'Product Quality', 'Quality Standards']
-    },
-    {
-      icon: <Users className="h-10 w-10 text-primary mb-4" />,
-      title: 'Teamwork',
-      description: 'Collaborative approach to problem-solving and project execution',
-      items: ['Collaboration', 'Knowledge Sharing', 'Peer Support', 'Team Projects']
+      icon: <Eye className="h-10 w-10 text-primary mb-4" />,
+      title: '👁️ Computer Vision & NLP',
+      description: 'Extracting insights from images and text using Python-based tools',
+      items: ['OpenCV', 'Image Processing', 'Text Analysis']
     },
     {
       icon: <MessageCircle className="h-10 w-10 text-primary mb-4" />,
-      title: 'Communication',
-      description: 'Clear and effective communication in technical and non-technical contexts',
-      items: ['Technical Writing', 'Presentations', 'Client Communication', 'Documentation']
+      title: '📢 Communication',
+      description: 'Clear and effective collaboration across technical and non-technical teams',
+      items: ['Technical Writing', 'Documentation', 'Cross-team Collaboration', 'Knowledge Sharing']
     }
   ];
 
@@ -82,7 +76,7 @@ const Skills = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            A showcase of my technical and soft skills developed through academic studies and practical experience.
+            Technical expertise spanning full-stack web development and machine learning, built through hands-on projects and academic training.
           </motion.p>
         </div>
         
@@ -90,10 +84,10 @@ const Skills = () => {
           <div className="flex justify-center mb-8">
             <TabsList className="bg-secondary/70 p-1">
               <TabsTrigger value="technical" className="text-sm sm:text-base px-4 sm:px-8 py-2.5">
-                Technical Skills
+                🛠️ Technical Skills
               </TabsTrigger>
               <TabsTrigger value="soft" className="text-sm sm:text-base px-4 sm:px-8 py-2.5">
-                Soft Skills
+                💡 Soft Skills
               </TabsTrigger>
             </TabsList>
           </div>
