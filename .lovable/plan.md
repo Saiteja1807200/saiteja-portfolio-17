@@ -1,22 +1,44 @@
 
 
-# Fix Profile Image URL
+# Fix Profile Image - Use Direct GitHub URL
 
-## Problem
-The current URL (`https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg`) points to a non-existent repository. The actual image is hosted at `saiteja-portfolio-39` repo.
+## Problem Identified
+The screenshot shows a stock/placeholder image is being rendered instead of your actual profile photo. Both the About component (`src/components/About.tsx`) and the About page (`src/pages/About.tsx`) import from `src/assets/saiteja-profile.jpg`, but this local file appears to have been corrupted or replaced with a stock image.
 
-## Correct URL
+## Solution
+Replace the local asset import with the direct GitHub raw URL in both files. This ensures:
+- The correct image is always displayed
+- No future accidental replacements can occur
+- The image source is permanent and reliable
+
+## Files to Modify
+
+### 1. src/components/About.tsx (About Me section on homepage)
+- Remove the import statement for `profileImage` from local assets
+- Use the direct GitHub URL as the image source
+
+### 2. src/pages/About.tsx (Dedicated About page)
+- Remove the import statement for `profileImage` from local assets
+- Use the direct GitHub URL as the image source
+
+## Technical Details
+
+**GitHub Raw Image URL:**
 ```
-https://raw.githubusercontent.com/Saiteja1807200/saiteja-portfolio-39/main/src/assets/profile.jpg
+https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg
 ```
 
-## Changes
+**Changes in src/components/About.tsx:**
+- Line 6: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
+- Line 90: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
 
-### 1. `src/components/About.tsx` (line 7)
-Update `PROFILE_IMAGE_URL` constant to the correct URL.
+**Changes in src/pages/About.tsx:**
+- Line 8: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
+- Line 92: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
 
-### 2. `src/pages/About.tsx` (line 10)
-Update `PROFILE_IMAGE_URL` constant to the correct URL.
-
-Both files already use `PROFILE_IMAGE_URL` for the image source, so only the constant value needs changing.
+## Benefits
+- Permanent, unchangeable image source
+- No dependency on local asset files
+- Consistent image across all sections
+- Prevents future accidental replacements or "improvements"
 
