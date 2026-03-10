@@ -32,7 +32,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
           >
             <span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full inline-block mb-2">
-              Machine Learning Enthusiast
+              Full Stack Developer & ML Enthusiast
             </span>
           </motion.div>
           
