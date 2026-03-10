@@ -33,7 +33,7 @@ const Contact = () => {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
-    const mailtoLink = `mailto:saitejaakinapelly@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:saitejaakinepelli@gmail.com?subject=${subject}&body=${body}`;
     
     // Open user's email client
     window.location.href = mailtoLink;
