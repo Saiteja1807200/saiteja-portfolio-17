@@ -197,15 +197,24 @@
   background: conic-gradient(
     from 0deg,
     transparent 0%,
-    transparent 70%,
-    var(--light-color, hsl(210 100% 50%)) 80%,
+    transparent 60%,
+    var(--light-color, hsl(210 100% 50%)) 72%,
     var(--light-color, hsl(210 100% 50%)) 85%,
     transparent 95%,
     transparent 100%
   );
   animation: border-spin 8s linear infinite;
   animation-delay: var(--delay, 0s);
-  opacity: 0.7;
+  opacity: 0.85;
+}
+
+.border-light-wrapper {
+  box-shadow: 0 0 15px color-mix(in srgb, var(--light-color, hsl(210 100% 50%)) 25%, transparent);
+  transition: box-shadow 0.3s ease;
+}
+
+.border-light-wrapper:hover {
+  box-shadow: 0 0 30px color-mix(in srgb, var(--light-color, hsl(210 100% 50%)) 40%, transparent);
 }
 
 .border-light-wrapper:hover::before {
