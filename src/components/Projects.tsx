@@ -203,7 +203,14 @@ const Projects = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.15 }}
+                >
+                  {/* Close button */}
+                  <button
+                    onClick={() => setExpandedId(null)}
+                    className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-foreground/70 hover:text-foreground z-10"
                   >
+                    <X className="h-4 w-4" />
+                  </button>
                     <div className="flex items-center gap-4 mb-6 mt-2">
                       <div className={cn('p-3 rounded-xl bg-gradient-to-br text-white', selectedProject.accentColor)}>
                         {selectedProject.icon}
