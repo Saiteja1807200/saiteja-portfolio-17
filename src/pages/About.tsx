@@ -5,8 +5,7 @@ import Footer from '@/components/Footer';
 import { Brain, Code, Users, MessageCircle } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import RippleEffect from '@/components/RippleEffect';
-
-const PROFILE_IMAGE_URL = "https://raw.githubusercontent.com/Saiteja1807200/saiteja-portfolio-39/main/src/assets/profile.jpg";
+import profileImage from '@/assets/profile.jpg';
 
 const AboutPage = () => {
   // Scroll to top on page load
@@ -90,7 +89,7 @@ const AboutPage = () => {
                 <div className="rounded-2xl overflow-hidden shadow-xl relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent opacity-70 z-10"></div>
                   <img 
-                    src={PROFILE_IMAGE_URL} 
+                    src={profileImage} 
                     alt="Saiteja Akinepelli"
                     className="w-full object-cover aspect-[4/5]"
                   />

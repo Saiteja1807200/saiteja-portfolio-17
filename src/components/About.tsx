@@ -3,8 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, BookOpen, Users, MessageSquare } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-
-const PROFILE_IMAGE_URL = "https://raw.githubusercontent.com/Saiteja1807200/saiteja-portfolio-39/main/src/assets/profile.jpg";
+import profileImage from '@/assets/profile.jpg';
 
 const About = () => {
   const features = [
@@ -88,7 +87,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <img 
-              src={PROFILE_IMAGE_URL} 
+              src={profileImage} 
               alt="Saiteja Akinepelli"
               className="block w-full object-contain"
             />
