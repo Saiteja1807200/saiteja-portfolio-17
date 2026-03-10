@@ -1,25 +1,44 @@
 
 
-# Add Traveling Light Border Effect to Project Cards
+# Fix Profile Image - Use Direct GitHub URL
 
-## What
-Add an animated glowing light that travels along the border of each project card sequentially — card 1 lights up, then card 2, then card 3, and repeats. This creates a "light beam tracing the border" effect.
+## Problem Identified
+The screenshot shows a stock/placeholder image is being rendered instead of your actual profile photo. Both the About component (`src/components/About.tsx`) and the About page (`src/pages/About.tsx`) import from `src/assets/saiteja-profile.jpg`, but this local file appears to have been corrupted or replaced with a stock image.
 
-## How
+## Solution
+Replace the local asset import with the direct GitHub raw URL in both files. This ensures:
+- The correct image is always displayed
+- No future accidental replacements can occur
+- The image source is permanent and reliable
 
-### 1. Add CSS animation in `src/index.css`
-- Define a `@keyframes border-light-travel` animation that rotates a `conic-gradient` around the card (0deg → 360deg)
-- Each card gets a staggered `animation-delay` so the light moves from one card to the next sequentially
-- The effect uses a pseudo-element (`::before`) with a rotating conic gradient behind the card, masked by the card's own background to show only the border glow
+## Files to Modify
 
-### 2. Update card markup in `src/components/Projects.tsx`
-- Wrap each card in a container div with the `border-light` class
-- Add `overflow-hidden` and `rounded-2xl` to the wrapper
-- The inner card sits on top, leaving a 1-2px gap that reveals the animated gradient border
-- Each card gets a CSS variable `--delay` based on its index (e.g., `0s`, `2s`, `4s`) so the light sequentially travels card-to-card
+### 1. src/components/About.tsx (About Me section on homepage)
+- Remove the import statement for `profileImage` from local assets
+- Use the direct GitHub URL as the image source
 
-### Technical approach
-- **Conic gradient technique**: A `::before` pseudo-element with a spinning conic gradient (transparent → accent color → transparent) creates the illusion of light traveling along the border
-- **Sequential animation**: Total cycle = 6s. Card 1 glows at 0-2s, card 2 at 2-4s, card 3 at 4-6s, using `animation-delay` per card
-- **Colors**: Each card's light matches its accent color (blue, violet, emerald) via CSS custom properties
+### 2. src/pages/About.tsx (Dedicated About page)
+- Remove the import statement for `profileImage` from local assets
+- Use the direct GitHub URL as the image source
+
+## Technical Details
+
+**GitHub Raw Image URL:**
+```
+https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg
+```
+
+**Changes in src/components/About.tsx:**
+- Line 6: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
+- Line 90: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
+
+**Changes in src/pages/About.tsx:**
+- Line 8: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
+- Line 92: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
+
+## Benefits
+- Permanent, unchangeable image source
+- No dependency on local asset files
+- Consistent image across all sections
+- Prevents future accidental replacements or "improvements"
 
