@@ -55,7 +55,7 @@ const About = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            I'm an aspiring Machine Learning professional with a passion for data science and innovative technology solutions. With a strong academic background in Computer Science, I'm constantly seeking to expand my knowledge and skills.
+            A recent Master of Computer Applications graduate with hands-on experience in full-stack web development and machine learning. I build scalable, user-focused applications and enjoy solving real-world problems through software engineering and data-driven solutions.
           </motion.p>
         </div>
         
