@@ -123,7 +123,7 @@ const Projects = () => {
                 onClick={() => setExpandedId(project.id)}
                 className={cn(
                   'group relative cursor-pointer rounded-2xl border border-primary/10 p-6 transition-colors duration-300 hover:border-primary/30',
-                  'bg-card/50 backdrop-blur-sm',
+                  'bg-white/5 backdrop-blur-sm',
                   expandedId === project.id && 'pointer-events-none opacity-0'
                 )}
                 whileHover={{ y: -6 }}
