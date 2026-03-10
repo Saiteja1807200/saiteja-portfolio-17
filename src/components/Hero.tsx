@@ -54,7 +54,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            An aspiring Machine Learning student passionate about solving complex problems with data-driven solutions. Currently pursuing my Masters in Computer Applications at Vaageswari College of Engineering.
+            An aspiring Full Stack Developer and Machine Learning enthusiast with a strong interest in building practical, data-driven software solutions. Experienced in developing full-stack web applications and implementing machine learning projects using modern development tools and Python-based technologies. Interested in contributing to scalable applications while continuously improving skills in software development, system design, and data-driven technologies.
           </motion.p>
           
           <motion.div 
