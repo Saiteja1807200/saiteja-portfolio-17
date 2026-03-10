@@ -123,7 +123,7 @@ const Projects = () => {
                 onClick={() => setExpandedId(project.id)}
                 className={cn(
                   'group relative cursor-pointer rounded-2xl border border-primary/10 p-6 transition-colors duration-300 hover:border-primary/30',
-                  'bg-card/50 backdrop-blur-sm',
+                  'bg-white/5 backdrop-blur-sm',
                   expandedId === project.id && 'pointer-events-none opacity-0'
                 )}
                 whileHover={{ y: -6 }}
@@ -145,12 +145,12 @@ const Projects = () => {
 
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-[10px] px-2 py-0.5 bg-secondary/80">
+                    <Badge key={tech} variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
                       {tech}
                     </Badge>
                   ))}
                   {project.technologies.length > 3 && (
-                    <Badge variant="secondary" className="text-[10px] px-2 py-0.5 bg-secondary/80">
+                    <Badge variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
                       +{project.technologies.length - 3}
                     </Badge>
                   )}
@@ -185,13 +185,13 @@ const Projects = () => {
                 {/* Expanded card */}
                 <motion.div
                   layoutId={`project-card-${selectedProject.id}`}
-                  className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-primary/20 bg-card p-6 md:p-8 shadow-2xl"
+                  className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 bg-background p-6 md:p-8 shadow-2xl"
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 >
                   {/* Close button */}
                   <button
                     onClick={() => setExpandedId(null)}
-                    className="absolute top-4 right-4 p-2 rounded-full bg-secondary/80 hover:bg-secondary transition-colors text-foreground/70 hover:text-foreground z-10"
+                    className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-foreground/70 hover:text-foreground z-10"
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -221,7 +221,7 @@ const Projects = () => {
                       <h4 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-3">Technologies</h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="px-3 py-1 bg-secondary/80 text-foreground/90">
+                          <Badge key={tech} variant="secondary" className="px-3 py-1 bg-white/10 text-foreground/90 border-white/10">
                             {tech}
                           </Badge>
                         ))}
