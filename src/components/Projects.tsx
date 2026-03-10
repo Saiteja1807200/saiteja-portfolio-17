@@ -166,7 +166,7 @@ const Projects = () => {
                         <Badge variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
                           +{project.technologies.length - 3}
                         </Badge>
-                      ))}
+                      )}
                     </div>
 
                     <div className="flex items-center text-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
