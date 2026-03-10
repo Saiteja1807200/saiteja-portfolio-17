@@ -145,12 +145,12 @@ const Projects = () => {
 
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {project.technologies.slice(0, 3).map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-[10px] px-2 py-0.5 bg-secondary/80">
+                    <Badge key={tech} variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
                       {tech}
                     </Badge>
                   ))}
                   {project.technologies.length > 3 && (
-                    <Badge variant="secondary" className="text-[10px] px-2 py-0.5 bg-secondary/80">
+                    <Badge variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
                       +{project.technologies.length - 3}
                     </Badge>
                   )}
