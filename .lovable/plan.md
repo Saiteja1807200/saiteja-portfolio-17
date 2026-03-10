@@ -1,44 +1,21 @@
 
 
-# Fix Profile Image - Use Direct GitHub URL
+## Problem
 
-## Problem Identified
-The screenshot shows a stock/placeholder image is being rendered instead of your actual profile photo. Both the About component (`src/components/About.tsx`) and the About page (`src/pages/About.tsx`) import from `src/assets/saiteja-profile.jpg`, but this local file appears to have been corrupted or replaced with a stock image.
+The project cards appear with a light gray/white background because the site doesn't have `class="dark"` on the `<html>` element. The CSS variable `--card` in light mode is pure white (`0 0% 100%`), so `bg-card/50` renders as semi-transparent white — clashing with the dark-themed portfolio.
 
-## Solution
-Replace the local asset import with the direct GitHub raw URL in both files. This ensures:
-- The correct image is always displayed
-- No future accidental replacements can occur
-- The image source is permanent and reliable
+Additionally, the Projects section needs to be moved above the Skills section in the page layout.
 
-## Files to Modify
+## Plan
 
-### 1. src/components/About.tsx (About Me section on homepage)
-- Remove the import statement for `profileImage` from local assets
-- Use the direct GitHub URL as the image source
+### 1. Fix card styling to match dark theme
+In `src/components/Projects.tsx`:
+- Replace `bg-card/50 backdrop-blur-sm` on cards with dark-themed classes: `bg-white/5 backdrop-blur-sm` (subtle dark glass effect)
+- Update the expanded card overlay from `bg-card` to `bg-background border-white/10` so it also stays dark
+- Update Badge classes from `bg-secondary/80` to `bg-white/10 text-foreground/80 border-white/10` for consistent dark appearance
+- Update close button and other secondary background references similarly
 
-### 2. src/pages/About.tsx (Dedicated About page)
-- Remove the import statement for `profileImage` from local assets
-- Use the direct GitHub URL as the image source
-
-## Technical Details
-
-**GitHub Raw Image URL:**
-```
-https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg
-```
-
-**Changes in src/components/About.tsx:**
-- Line 6: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
-- Line 90: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
-
-**Changes in src/pages/About.tsx:**
-- Line 8: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
-- Line 92: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
-
-## Benefits
-- Permanent, unchangeable image source
-- No dependency on local asset files
-- Consistent image across all sections
-- Prevents future accidental replacements or "improvements"
+### 2. Move Projects above Skills
+In `src/pages/Index.tsx`:
+- Reorder: `<Projects />` before `<Skills />` (swap lines 28-29)
 
