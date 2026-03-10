@@ -10,26 +10,26 @@ const About = () => {
     {
       icon: <Brain className="h-10 w-10 text-primary" />,
       title: 'Machine Learning',
-      description: 'Building and evaluating ML models for various applications',
-      items: ['Supervised Learning', 'Data Analysis', 'Model Evaluation', 'Feature Engineering']
+      description: 'Building intelligent systems with data-driven approaches',
+      items: ['Scikit-learn & XGBoost', 'Computer Vision (OpenCV)', 'NLP (NLTK)', 'Model Evaluation']
     },
     {
       icon: <BookOpen className="h-10 w-10 text-primary" />,
-      title: 'Quality Management',
-      description: 'Ensuring high standards in product and service quality',
-      items: ['Quality Control', 'Process Improvement', 'Product Quality', 'Quality Standards']
+      title: 'Full Stack Development',
+      description: 'End-to-end web application development with modern tools',
+      items: ['React & TypeScript', 'PostgreSQL', 'REST APIs', 'Authentication & Auth Flows']
     },
     {
       icon: <Users className="h-10 w-10 text-primary" />,
-      title: 'Teamwork',
-      description: 'Collaborative approach to problem-solving and project execution',
-      items: ['Collaboration', 'Knowledge Sharing', 'Peer Support', 'Team Projects']
+      title: 'SDLC & Agile',
+      description: 'Structured development from requirements to deployment',
+      items: ['Requirement Analysis', 'Agile Sprints', 'Testing & QA', 'CI/CD & Deployment']
     },
     {
       icon: <MessageSquare className="h-10 w-10 text-primary" />,
       title: 'Communication',
-      description: 'Clear and effective communication in technical and non-technical contexts',
-      items: ['Technical Writing', 'Presentations', 'Documentation', 'Cross-team Communication']
+      description: 'Clear and effective collaboration across teams',
+      items: ['Technical Writing', 'Documentation', 'Cross-team Collaboration', 'Knowledge Sharing']
     }
   ];
 
