@@ -141,8 +141,6 @@ const Projects = () => {
                     )}
                     whileHover={{ y: -6 }}
                   >
-                    {/* Accent gradient bar */}
-                    <div className={cn('absolute top-0 left-6 right-6 h-1 rounded-b-full bg-gradient-to-r opacity-60 group-hover:opacity-100 transition-opacity', project.accentColor)} />
 
                     <div className="flex items-center gap-3 mb-4 mt-2">
                       <div className={cn('p-2.5 rounded-xl bg-gradient-to-br text-white', project.accentColor)}>
