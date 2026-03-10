@@ -10,26 +10,26 @@ const About = () => {
     {
       icon: <Brain className="h-10 w-10 text-primary" />,
       title: 'Machine Learning',
-      description: 'Building and evaluating ML models for various applications',
-      items: ['Supervised Learning', 'Data Analysis', 'Model Evaluation', 'Feature Engineering']
+      description: 'Building intelligent systems with data-driven approaches',
+      items: ['Scikit-learn & XGBoost', 'Computer Vision (OpenCV)', 'NLP (NLTK)', 'Model Evaluation']
     },
     {
       icon: <BookOpen className="h-10 w-10 text-primary" />,
-      title: 'Quality Management',
-      description: 'Ensuring high standards in product and service quality',
-      items: ['Quality Control', 'Process Improvement', 'Product Quality', 'Quality Standards']
+      title: 'Full Stack Development',
+      description: 'End-to-end web application development with modern tools',
+      items: ['React & TypeScript', 'PostgreSQL', 'REST APIs', 'Authentication & Auth Flows']
     },
     {
       icon: <Users className="h-10 w-10 text-primary" />,
-      title: 'Teamwork',
-      description: 'Collaborative approach to problem-solving and project execution',
-      items: ['Collaboration', 'Knowledge Sharing', 'Peer Support', 'Team Projects']
+      title: 'SDLC & Agile',
+      description: 'Structured development from requirements to deployment',
+      items: ['Requirement Analysis', 'Agile Sprints', 'Testing & QA', 'CI/CD & Deployment']
     },
     {
       icon: <MessageSquare className="h-10 w-10 text-primary" />,
       title: 'Communication',
-      description: 'Clear and effective communication in technical and non-technical contexts',
-      items: ['Technical Writing', 'Presentations', 'Documentation', 'Cross-team Communication']
+      description: 'Clear and effective collaboration across teams',
+      items: ['Technical Writing', 'Documentation', 'Cross-team Collaboration', 'Knowledge Sharing']
     }
   ];
 
@@ -55,7 +55,7 @@ const About = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            I'm an aspiring Machine Learning professional with a passion for data science and innovative technology solutions. With a strong academic background in Computer Science, I'm constantly seeking to expand my knowledge and skills.
+            A recent Master of Computer Applications graduate with hands-on experience in full-stack web development and machine learning. I build scalable, user-focused applications and enjoy solving real-world problems through software engineering and data-driven solutions.
           </motion.p>
         </div>
         
@@ -69,13 +69,13 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold">My Journey</h3>
             <p className="text-foreground/80">
-              My passion for technology began during my early education, and I've been on a continuous learning path ever since. Currently pursuing my Masters in Computer Applications at Vaageswari College of Engineering, I'm focusing on developing expertise in Machine Learning and data analysis.
+              I hold a Master of Computer Applications from Vaageswari College of Engineering, where I developed a strong foundation in software development and machine learning. I've built full-stack web applications using React, PostgreSQL, and modern backend services — including a service marketplace platform featuring role-based authentication, booking workflows, and automated email notifications.
             </p>
             <p className="text-foreground/80">
-              I believe in the power of technology to transform lives and businesses. With my skills in Python, SQL, and quality management, I aim to contribute to innovative solutions that make a difference.
+              On the data science side, I've worked on computer vision and NLP projects using Python, OpenCV, Scikit-learn, and NLTK — from license plate recognition systems to recruitment fraud detection models. I'm well-versed in the Software Development Life Cycle, from requirement analysis through testing and deployment, and follow Agile practices to deliver iterative, high-quality results.
             </p>
             <p className="text-foreground/80">
-              Beyond technical skills, I value helping others and sharing knowledge. I enjoy supporting colleagues in their learning journey and believe that collaborative environments foster the best innovations.
+              I'm actively seeking opportunities as a Full Stack Developer or in Machine Learning roles where I can apply my technical skills to build impactful, scalable solutions.
             </p>
           </motion.div>
           
