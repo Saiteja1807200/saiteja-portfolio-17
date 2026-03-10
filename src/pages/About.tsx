@@ -82,16 +82,19 @@ const AboutPage = () => {
               
               <motion.div 
                 className="order-1 md:order-2"
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                initial={{ opacity: 0, scale: 0.85, rotateY: -15 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="rounded-2xl overflow-hidden shadow-xl relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent opacity-70 z-10"></div>
-                  <img 
+                  <motion.img 
                     src={profileImage} 
                     alt="Saiteja Akinepelli"
                     className="w-full object-cover aspect-[4/5]"
+                    initial={{ scale: 1.15, filter: 'blur(8px)' }}
+                    animate={{ scale: 1, filter: 'blur(0px)' }}
+                    transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
                   />
                 </div>
               </motion.div>

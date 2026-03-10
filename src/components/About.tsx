@@ -81,15 +81,19 @@ const About = () => {
           
           <motion.div 
             className="glass-card rounded-2xl overflow-hidden shadow-xl"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.85, rotateY: 15 }}
+            whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
             viewport={{ once: true, margin: '-100px' }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <img 
+            <motion.img 
               src={profileImage} 
               alt="Saiteja Akinepelli"
               className="block w-full object-contain"
+              initial={{ scale: 1.15, filter: 'blur(8px)' }}
+              whileInView={{ scale: 1, filter: 'blur(0px)' }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
             />
           </motion.div>
         </div>
