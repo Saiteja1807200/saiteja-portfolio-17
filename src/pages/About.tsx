@@ -89,7 +89,7 @@ const AboutPage = () => {
                 <div className="rounded-2xl overflow-hidden shadow-xl relative">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent opacity-70 z-10"></div>
                   <img 
-                    src={PROFILE_IMAGE_URL} 
+                    src={profileImage} 
                     alt="Saiteja Akinepelli"
                     className="w-full object-cover aspect-[4/5]"
                   />

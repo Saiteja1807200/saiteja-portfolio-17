@@ -87,7 +87,7 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <img 
-              src={PROFILE_IMAGE_URL} 
+              src={profileImage} 
               alt="Saiteja Akinepelli"
               className="block w-full object-contain"
             />
