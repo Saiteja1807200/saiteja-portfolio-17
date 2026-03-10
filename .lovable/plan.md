@@ -1,44 +1,29 @@
 
 
-# Fix Profile Image - Use Direct GitHub URL
+# Fix White Flash on Hero & Broken Links Between Pages
 
-## Problem Identified
-The screenshot shows a stock/placeholder image is being rendered instead of your actual profile photo. Both the About component (`src/components/About.tsx`) and the About page (`src/pages/About.tsx`) import from `src/assets/saiteja-profile.jpg`, but this local file appears to have been corrupted or replaced with a stock image.
+## Issues Identified
 
-## Solution
-Replace the local asset import with the direct GitHub raw URL in both files. This ensures:
-- The correct image is always displayed
-- No future accidental replacements can occur
-- The image source is permanent and reliable
+1. **White blank screen on Hero (2 seconds)**: The Aurora WebGL component takes time to initialize (creating renderer, compiling shaders, first frame). During this time, the hero section has no background, showing a white/blank area. Additionally, all hero content uses `initial={{ opacity: 0 }}` animations that take 0.3-0.5s with staggered delays up to 0.3s.
 
-## Files to Modify
+2. **Links breaking when switching pages**: The Hero "Get In Touch" button uses `<a href="/contact">` instead of React Router's `<Link to="/contact">`. This causes a full page reload instead of client-side navigation, breaking the SPA routing and AnimatePresence transitions.
 
-### 1. src/components/About.tsx (About Me section on homepage)
-- Remove the import statement for `profileImage` from local assets
-- Use the direct GitHub URL as the image source
+## Plan
 
-### 2. src/pages/About.tsx (Dedicated About page)
-- Remove the import statement for `profileImage` from local assets
-- Use the direct GitHub URL as the image source
+### 1. Fix Hero links to use React Router
+In `src/components/Hero.tsx`:
+- Import `Link` from `react-router-dom`
+- Change `<a href="/contact">` to `<Link to="/contact">`
+- Keep the external resume link as `<a>` (it's correct since it opens externally)
 
-## Technical Details
+### 2. Fix white flash on Hero section
+In `src/components/Hero.tsx`:
+- Add a dark background color to the hero section (`bg-background`) so the area isn't blank white while Aurora initializes
+- Set the Aurora container div to have a matching background as fallback
 
-**GitHub Raw Image URL:**
-```
-https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg
-```
+In `src/components/Aurora.tsx`:
+- No changes needed; adding a CSS background fallback on the parent is sufficient
 
-**Changes in src/components/About.tsx:**
-- Line 6: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
-- Line 90: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
-
-**Changes in src/pages/About.tsx:**
-- Line 8: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
-- Line 92: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
-
-## Benefits
-- Permanent, unchangeable image source
-- No dependency on local asset files
-- Consistent image across all sections
-- Prevents future accidental replacements or "improvements"
+### 3. Reduce initial animation delay
+- Keep animations but they're fine as-is; the main flash is from the missing background color, not the animation delays
 
