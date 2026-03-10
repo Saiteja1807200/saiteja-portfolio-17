@@ -192,20 +192,12 @@ const Projects = () => {
 
                 {/* Expanded card */}
                 <motion.div
-                  layoutId={`project-card-${selectedProject.id}`}
                   className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 bg-background p-6 md:p-8 shadow-2xl"
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                  initial={{ opacity: 0, scale: 0.92 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.92 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
                 >
-                  {/* Close button */}
-                  <button
-                    onClick={() => setExpandedId(null)}
-                    className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-foreground/70 hover:text-foreground z-10"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-
-                  {/* Accent gradient bar */}
-                  <div className={cn('absolute top-0 left-8 right-8 h-1 rounded-b-full bg-gradient-to-r', selectedProject.accentColor)} />
 
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
