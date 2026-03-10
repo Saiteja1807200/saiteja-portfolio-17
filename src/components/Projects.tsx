@@ -221,7 +221,7 @@ const Projects = () => {
                       <h4 className="text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-3">Technologies</h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="px-3 py-1 bg-secondary/80 text-foreground/90">
+                          <Badge key={tech} variant="secondary" className="px-3 py-1 bg-white/10 text-foreground/90 border-white/10">
                             {tech}
                           </Badge>
                         ))}
