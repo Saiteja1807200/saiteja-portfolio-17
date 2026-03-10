@@ -128,17 +128,12 @@ const Projects = () => {
                   } as React.CSSProperties}
                 >
                   <motion.div
-                    layoutId={`project-card-${project.id}`}
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-50px' }}
                     transition={{ duration: 0.5, delay: index * 0.15 }}
                     onClick={() => setExpandedId(project.id)}
-                    className={cn(
-                      'border-light-inner group relative cursor-pointer p-6 transition-colors duration-300',
-                      'bg-background',
-                      expandedId === project.id && 'pointer-events-none opacity-0'
-                    )}
+                    className="border-light-inner group relative cursor-pointer p-6 transition-colors duration-300 bg-background"
                     whileHover={{ y: -6 }}
                   >
 
