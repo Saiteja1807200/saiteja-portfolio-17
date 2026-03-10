@@ -191,7 +191,7 @@ const Projects = () => {
                   {/* Close button */}
                   <button
                     onClick={() => setExpandedId(null)}
-                    className="absolute top-4 right-4 p-2 rounded-full bg-secondary/80 hover:bg-secondary transition-colors text-foreground/70 hover:text-foreground z-10"
+                    className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors text-foreground/70 hover:text-foreground z-10"
                   >
                     <X className="h-4 w-4" />
                   </button>
