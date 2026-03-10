@@ -112,55 +112,70 @@ const Projects = () => {
         <LayoutGroup>
           {/* Cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                layoutId={`project-card-${project.id}`}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                onClick={() => setExpandedId(project.id)}
-                className={cn(
-                  'group relative cursor-pointer rounded-2xl border border-primary/10 p-6 transition-colors duration-300 hover:border-primary/30',
-                  'bg-white/5 backdrop-blur-sm',
-                  expandedId === project.id && 'pointer-events-none opacity-0'
-                )}
-                whileHover={{ y: -6 }}
-              >
-                {/* Accent gradient bar */}
-                <div className={cn('absolute top-0 left-6 right-6 h-1 rounded-b-full bg-gradient-to-r opacity-60 group-hover:opacity-100 transition-opacity', project.accentColor)} />
+            {projects.map((project, index) => {
+              const lightColors: Record<number, string> = {
+                0: 'hsl(210 100% 50%)',
+                1: 'hsl(270 80% 60%)',
+                2: 'hsl(160 80% 45%)',
+              };
+              return (
+                <div
+                  key={project.id}
+                  className="border-light-wrapper"
+                  style={{
+                    '--delay': `${index * 2}s`,
+                    '--light-color': lightColors[index],
+                  } as React.CSSProperties}
+                >
+                  <motion.div
+                    layoutId={`project-card-${project.id}`}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-50px' }}
+                    transition={{ duration: 0.5, delay: index * 0.15 }}
+                    onClick={() => setExpandedId(project.id)}
+                    className={cn(
+                      'border-light-inner group relative cursor-pointer p-6 transition-colors duration-300',
+                      'bg-background',
+                      expandedId === project.id && 'pointer-events-none opacity-0'
+                    )}
+                    whileHover={{ y: -6 }}
+                  >
+                    {/* Accent gradient bar */}
+                    <div className={cn('absolute top-0 left-6 right-6 h-1 rounded-b-full bg-gradient-to-r opacity-60 group-hover:opacity-100 transition-opacity', project.accentColor)} />
 
-                <div className="flex items-center gap-3 mb-4 mt-2">
-                  <div className={cn('p-2.5 rounded-xl bg-gradient-to-br text-white', project.accentColor)}>
-                    {project.icon}
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground text-lg leading-tight">{project.title}</h3>
-                    <p className="text-xs text-muted-foreground">{project.subtitle}</p>
-                  </div>
+                    <div className="flex items-center gap-3 mb-4 mt-2">
+                      <div className={cn('p-2.5 rounded-xl bg-gradient-to-br text-white', project.accentColor)}>
+                        {project.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-foreground text-lg leading-tight">{project.title}</h3>
+                        <p className="text-xs text-muted-foreground">{project.subtitle}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-foreground/70 text-sm mb-4 line-clamp-2">{project.description}</p>
+
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {project.technologies.slice(0, 3).map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
+                          {tech}
+                        </Badge>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <Badge variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
+                          +{project.technologies.length - 3}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center text-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+                      View Details <ChevronRight className="h-4 w-4" />
+                    </div>
+                  </motion.div>
                 </div>
-
-                <p className="text-foreground/70 text-sm mb-4 line-clamp-2">{project.description}</p>
-
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.technologies.slice(0, 3).map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
-                      {tech}
-                    </Badge>
-                  ))}
-                  {project.technologies.length > 3 && (
-                    <Badge variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
-                      +{project.technologies.length - 3}
-                    </Badge>
-                  )}
-                </div>
-
-                <div className="flex items-center text-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
-                  View Details <ChevronRight className="h-4 w-4" />
-                </div>
-              </motion.div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Expanded overlay */}

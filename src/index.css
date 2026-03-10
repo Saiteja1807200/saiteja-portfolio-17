@@ -180,3 +180,49 @@
   transform: translateY(8px);
   transition: opacity 300ms, transform 300ms;
 }
+
+/* Traveling light border effect */
+.border-light-wrapper {
+  position: relative;
+  border-radius: 1rem;
+  padding: 1.5px;
+  overflow: hidden;
+}
+
+.border-light-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 70%,
+    var(--light-color, hsl(210 100% 50%)) 80%,
+    var(--light-color, hsl(210 100% 50%)) 85%,
+    transparent 95%,
+    transparent 100%
+  );
+  animation: border-spin 6s linear infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+  animation-name: border-spin, border-pulse;
+}
+
+@keyframes border-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes border-pulse {
+  0%, 5% { opacity: 0; }
+  10%, 28% { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+
+.border-light-wrapper .border-light-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: calc(1rem - 1.5px);
+  height: 100%;
+}
