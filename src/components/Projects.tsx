@@ -185,7 +185,7 @@ const Projects = () => {
                 {/* Expanded card */}
                 <motion.div
                   layoutId={`project-card-${selectedProject.id}`}
-                  className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-primary/20 bg-card p-6 md:p-8 shadow-2xl"
+                  className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 bg-background p-6 md:p-8 shadow-2xl"
                   transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                 >
                   {/* Close button */}
