@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden bg-background">
       <div className="absolute inset-0 opacity-70">
         <Aurora 
           colorStops={["#5227FF", "#7cff67", "#5227FF"]}
