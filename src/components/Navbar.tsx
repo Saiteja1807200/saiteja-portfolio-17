@@ -1,14 +1,27 @@
-
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from '@/components/ui/dropdown-menu';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToProjects = () => {
+    if (location.pathname === '/') {
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/', { state: { scrollTo: 'projects' } });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +54,13 @@ const Navbar = () => {
     { title: 'Contact', path: '/contact' },
   ];
 
+  const projectItems = [
+    { title: 'All Projects', id: null },
+    { title: 'Home Hero', id: 1 },
+    { title: 'Number Plate Recognition', id: 2 },
+    { title: 'Recruitment Fraud Detection', id: 3 },
+  ];
+
   return (
     <header
       className={cn(
@@ -68,13 +88,47 @@ const Navbar = () => {
                   ? 'text-primary after:w-full bg-primary/10 scale-105'
                   : 'text-foreground/80 hover:text-foreground hover:bg-primary/5'
               )}
-              style={{
-                animationDelay: `${index * 100}ms`
-              }}
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               {link.title}
             </Link>
           ))}
+
+          {/* Projects Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                className={cn(
+                  'font-medium transition-all duration-300 animated-underline py-1 hover:scale-110 hover:-translate-y-1 transform',
+                  'hover:shadow-lg hover:shadow-primary/25 rounded-md px-3 py-2 flex items-center gap-1 outline-none',
+                  'text-foreground/80 hover:text-foreground hover:bg-primary/5'
+                )}
+              >
+                Projects <ChevronDown className="h-4 w-4" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              {projectItems.map((item) => (
+                <DropdownMenuItem
+                  key={item.title}
+                  className="cursor-pointer"
+                  onClick={() => {
+                    if (item.id === null) {
+                      scrollToProjects();
+                    } else {
+                      if (location.pathname === '/') {
+                        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                      } else {
+                        navigate('/', { state: { scrollTo: 'projects' } });
+                      }
+                    }
+                  }}
+                >
+                  {item.title}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -113,6 +167,15 @@ const Navbar = () => {
               {link.title}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              scrollToProjects();
+            }}
+            className="text-2xl font-medium transition-all duration-200 px-4 py-2 rounded-lg hover:bg-primary/10 text-foreground/80 hover:text-foreground"
+          >
+            Projects
+          </button>
         </nav>
       </div>
     </header>
