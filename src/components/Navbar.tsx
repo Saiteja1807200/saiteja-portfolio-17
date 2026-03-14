@@ -167,6 +167,15 @@ const Navbar = () => {
               {link.title}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              scrollToProjects();
+            }}
+            className="text-2xl font-medium transition-all duration-200 px-4 py-2 rounded-lg hover:bg-primary/10 text-foreground/80 hover:text-foreground"
+          >
+            Projects
+          </button>
         </nav>
       </div>
     </header>
