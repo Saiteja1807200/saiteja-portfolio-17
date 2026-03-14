@@ -1,44 +1,23 @@
 
 
-# Fix Profile Image - Use Direct GitHub URL
+## Plan: Add Projects Dropdown Menu to Navbar
 
-## Problem Identified
-The screenshot shows a stock/placeholder image is being rendered instead of your actual profile photo. Both the About component (`src/components/About.tsx`) and the About page (`src/pages/About.tsx`) import from `src/assets/saiteja-profile.jpg`, but this local file appears to have been corrupted or replaced with a stock image.
+### 1. Add Projects Dropdown to Navbar (`src/components/Navbar.tsx`)
+- Import dropdown menu components and ChevronDown icon
+- Replace the flat navLinks array with a structure supporting dropdowns
+- Add a "Projects" dropdown menu item containing:
+  - Link to scroll to Projects section on home page
+  - Links for individual projects (Home Hero, Number Plate Recognition, Recruitment Fraud Detection) that navigate to home page and open project modal
+- Keep other nav items (Home, About, Resume, Contact) as regular links
+- Style dropdown to match existing navbar design with hover effects
 
-## Solution
-Replace the local asset import with the direct GitHub raw URL in both files. This ensures:
-- The correct image is always displayed
-- No future accidental replacements can occur
-- The image source is permanent and reliable
+### Implementation Approach
+- Use `DropdownMenu`, `DropdownMenuTrigger`, `DropdownMenuContent`, `DropdownMenuItem` components
+- Dropdown trigger shows "Projects" with a chevron icon
+- Clicking "Projects" section link scrolls to `#projects` on home page
+- Clicking individual project links navigates to `/` and passes state to auto-expand that project modal
+- Mobile menu will show Projects as a collapsible section or simple link
 
-## Files to Modify
-
-### 1. src/components/About.tsx (About Me section on homepage)
-- Remove the import statement for `profileImage` from local assets
-- Use the direct GitHub URL as the image source
-
-### 2. src/pages/About.tsx (Dedicated About page)
-- Remove the import statement for `profileImage` from local assets
-- Use the direct GitHub URL as the image source
-
-## Technical Details
-
-**GitHub Raw Image URL:**
-```
-https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg
-```
-
-**Changes in src/components/About.tsx:**
-- Line 6: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
-- Line 90: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
-
-**Changes in src/pages/About.tsx:**
-- Line 8: Remove `import profileImage from '@/assets/saiteja-profile.jpg';`
-- Line 92: Change `src={profileImage}` to `src="https://raw.githubusercontent.com/Saiteja1807200/Assets/main/profile.jpg"`
-
-## Benefits
-- Permanent, unchangeable image source
-- No dependency on local asset files
-- Consistent image across all sections
-- Prevents future accidental replacements or "improvements"
+### Files to Modify
+- `src/components/Navbar.tsx` - Add dropdown menu for Projects
 
