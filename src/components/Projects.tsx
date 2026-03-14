@@ -74,8 +74,20 @@ const projects: Project[] = [
   },
 ];
 
-const Projects = () => {
+interface ProjectsProps {
+  initialExpandedId?: number | null;
+  onExpandedChange?: (id: number | null) => void;
+}
+
+const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
+
+  React.useEffect(() => {
+    if (initialExpandedId) {
+      setExpandedId(initialExpandedId);
+      onExpandedChange?.(null);
+    }
+  }, [initialExpandedId]);
 
   const selectedProject = projects.find((p) => p.id === expandedId);
 

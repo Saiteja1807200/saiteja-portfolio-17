@@ -49,7 +49,7 @@ const Index = () => {
         <Hero />
         <About />
         <Education />
-        <Projects />
+        <Projects initialExpandedId={expandProject} onExpandedChange={setExpandProject} />
         <Skills />
         <Contact />
       </main>
