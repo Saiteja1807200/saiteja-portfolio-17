@@ -13,6 +13,15 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const scrollToProjects = () => {
+    if (location.pathname === '/') {
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/', { state: { scrollTo: 'projects' } });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
