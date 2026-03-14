@@ -118,8 +118,9 @@ const Navbar = () => {
                     } else {
                       if (location.pathname === '/') {
                         document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+                        window.dispatchEvent(new CustomEvent('expandProject', { detail: item.id }));
                       } else {
-                        navigate('/', { state: { scrollTo: 'projects' } });
+                        navigate('/', { state: { scrollTo: 'projects', expandProject: item.id } });
                       }
                     }
                   }}
