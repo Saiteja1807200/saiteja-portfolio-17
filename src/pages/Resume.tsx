@@ -73,9 +73,9 @@ const ResumePage = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className={cn('min-h-screen', isBlackTheme && 'black')}>
       <RippleEffect />
-      <Navbar />
+      <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       
       <main className="pt-24 pb-16">
         <section className="py-12">
