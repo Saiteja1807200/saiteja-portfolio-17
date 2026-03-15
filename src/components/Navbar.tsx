@@ -157,9 +157,9 @@ const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
             onClick={toggleMobileMenu}
             aria-label="Toggle Menu"
           >
-          {isMobileMenuOpen ? <X className="text-primary" /> : <Menu className="text-primary" />}
-        </Button>
-      </div>
+            {isMobileMenuOpen ? <X className="text-primary" /> : <Menu className="text-primary" />}
+          </Button>
+        </div>
 
       {/* Mobile Menu */}
       <div
