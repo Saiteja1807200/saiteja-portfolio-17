@@ -160,6 +160,7 @@ const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
             {isMobileMenuOpen ? <X className="text-primary" /> : <Menu className="text-primary" />}
           </Button>
         </div>
+      </div>
 
       {/* Mobile Menu */}
       <div
