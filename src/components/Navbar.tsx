@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import {
@@ -9,7 +9,13 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from '@/components/ui/dropdown-menu';
-const Navbar = () => {
+
+interface NavbarProps {
+  isBlackTheme?: boolean;
+  onThemeToggle?: () => void;
+}
+
+const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -132,16 +138,28 @@ const Navbar = () => {
           </DropdownMenu>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden text-primary hover:text-primary/80 hover:bg-primary/10"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle Menu"
-        >
-          {isMobileMenuOpen ? <X className="text-primary" /> : <Menu className="text-primary" />}
-        </Button>
+        {/* Theme Toggle & Mobile Menu Button */}
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-foreground/80 hover:text-foreground hover:bg-primary/10"
+            onClick={onThemeToggle}
+            aria-label="Toggle Theme"
+            title={isBlackTheme ? "Switch to Dark" : "Switch to Black"}
+          >
+            <Moon className={cn("h-5 w-5", isBlackTheme && "fill-current")} />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-primary hover:text-primary/80 hover:bg-primary/10"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle Menu"
+          >
+            {isMobileMenuOpen ? <X className="text-primary" /> : <Menu className="text-primary" />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

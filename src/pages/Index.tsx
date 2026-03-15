@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Education from '@/components/Education';
@@ -15,6 +16,7 @@ import RippleEffect from '@/components/RippleEffect';
 const Index = () => {
   const location = useLocation();
   const [expandProject, setExpandProject] = useState<number | null>(null);
+  const [isBlackTheme, setIsBlackTheme] = useState(false);
 
   useEffect(() => {
     const state = location.state as { scrollTo?: string; expandProject?: number } | null;
@@ -41,10 +43,19 @@ const Index = () => {
     return () => window.removeEventListener('expandProject', handler);
   }, []);
 
+  const toggleTheme = () => {
+    setIsBlackTheme(!isBlackTheme);
+    if (!isBlackTheme) {
+      document.documentElement.classList.add('black');
+    } else {
+      document.documentElement.classList.remove('black');
+    }
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className={cn('min-h-screen', isBlackTheme && 'black')}>
       <RippleEffect />
-      <Navbar />
+      <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       <main>
         <Hero />
         <About />
