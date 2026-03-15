@@ -1,6 +1,7 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { GraduationCap, Briefcase, Award, Download, Check } from 'lucide-react';
@@ -10,10 +11,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import RippleEffect from '@/components/RippleEffect';
 
 const ResumePage = () => {
+  const [isBlackTheme, setIsBlackTheme] = useState(false);
+
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const toggleTheme = () => {
+    setIsBlackTheme(!isBlackTheme);
+    if (!isBlackTheme) {
+      document.documentElement.classList.add('black');
+    } else {
+      document.documentElement.classList.remove('black');
+    }
+  };
 
   const education = [
     {
