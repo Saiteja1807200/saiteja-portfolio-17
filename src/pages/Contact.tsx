@@ -1,16 +1,28 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
 import RippleEffect from '@/components/RippleEffect';
 
 const ContactPage = () => {
+  const [isBlackTheme, setIsBlackTheme] = useState(false);
+
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const toggleTheme = () => {
+    setIsBlackTheme(!isBlackTheme);
+    if (!isBlackTheme) {
+      document.documentElement.classList.add('black');
+    } else {
+      document.documentElement.classList.remove('black');
+    }
+  };
 
   return (
     <div className="min-h-screen">
