@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Education from '@/components/Education';
