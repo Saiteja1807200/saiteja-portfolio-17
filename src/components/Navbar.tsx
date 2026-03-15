@@ -138,14 +138,25 @@ const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
           </DropdownMenu>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden text-primary hover:text-primary/80 hover:bg-primary/10"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle Menu"
-        >
+        {/* Theme Toggle & Mobile Menu Button */}
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-foreground/80 hover:text-foreground hover:bg-primary/10"
+            onClick={onThemeToggle}
+            aria-label="Toggle Theme"
+            title={isBlackTheme ? "Switch to Dark" : "Switch to Black"}
+          >
+            <Moon className={cn("h-5 w-5", isBlackTheme && "fill-current")} />
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-primary hover:text-primary/80 hover:bg-primary/10"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle Menu"
+          >
           {isMobileMenuOpen ? <X className="text-primary" /> : <Menu className="text-primary" />}
         </Button>
       </div>
