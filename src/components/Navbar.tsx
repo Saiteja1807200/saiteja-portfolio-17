@@ -101,7 +101,7 @@ const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
           ))}
 
           {/* Projects Dropdown */}
-          <DropdownMenu>
+          <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
               <button
                 className={cn(
@@ -113,7 +113,7 @@ const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
                 Projects <ChevronDown className="h-4 w-4" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
+            <DropdownMenuContent align="end" className="w-56" onPointerDownOutside={(e) => e.preventDefault() } onInteractOutside={() => {}}>
               {projectItems.map((item) => (
                 <DropdownMenuItem
                   key={item.title}
