@@ -131,19 +131,19 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
                 2: 'hsl(160 80% 45%)',
               };
               return (
-                <div
+                <motion.div
                   key={project.id}
                   className="border-light-wrapper"
                   style={{
                     '--delay': `${index * 2}s`,
                     '--light-color': lightColors[index],
                   } as React.CSSProperties}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-50px' }}
+                  transition={{ duration: 0.5, delay: index * 0.15 }}
                 >
                   <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-50px' }}
-                    transition={{ duration: 0.5, delay: index * 0.15 }}
                     onClick={() => setExpandedId(project.id)}
                     className="border-light-inner group relative cursor-pointer p-6 transition-colors duration-300 bg-background"
                     whileHover={{ y: -6 }}
