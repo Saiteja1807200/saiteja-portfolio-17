@@ -32,23 +32,24 @@ const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
       
-      // Close mobile menu on scroll
-      if (isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
-      }
+      // Close mobile menu and dropdown on scroll
+      if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+      if (isDropdownOpen) setIsDropdownOpen(false);
+    };
+
+    const handleTouch = () => {
+      if (isDropdownOpen) setIsDropdownOpen(false);
     };
 
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('touchstart', handleTouch);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('touchstart', handleTouch);
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, isDropdownOpen]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
