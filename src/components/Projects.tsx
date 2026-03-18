@@ -178,7 +178,7 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
                       View Details <ChevronRight className="h-4 w-4" />
                     </div>
                   </motion.div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
