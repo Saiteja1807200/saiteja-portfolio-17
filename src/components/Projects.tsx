@@ -69,6 +69,7 @@ const projects: Project[] = [
       'Improves reliability and security of recruitment platforms',
     ],
     icon: <ShieldCheck className="h-6 w-6" />,
+    github: 'https://github.com/Saiteja1807200/online-recruitment-fraud-detection',
     accentColor: 'from-emerald-500 to-teal-400',
   },
 ];
