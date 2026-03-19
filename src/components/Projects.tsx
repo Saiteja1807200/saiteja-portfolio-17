@@ -52,8 +52,7 @@ const projects: Project[] = [
       'Optimized detection pipeline for real-time processing',
     ],
     icon: <Eye className="h-6 w-6" />,
-    github: '',
-    demo: '',
+    github: 'https://github.com/Saiteja1807200/automatic-number-plate-detection-using-opencv',
     accentColor: 'from-violet-500 to-purple-400',
   },
   {
