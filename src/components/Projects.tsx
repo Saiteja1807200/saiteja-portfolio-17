@@ -174,8 +174,21 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
                       )}
                     </div>
 
-                    <div className="flex items-center text-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all">
-                      View Details <ChevronRight className="h-4 w-4" />
+                    <div className="flex items-center justify-between">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="flex items-center gap-1.5 text-foreground/70 hover:text-foreground text-sm font-medium transition-colors"
+                        >
+                          <Github className="h-4 w-4" /> GitHub
+                        </a>
+                      )}
+                      <div className="flex items-center text-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all ml-auto">
+                        View Details <ChevronRight className="h-4 w-4" />
+                      </div>
                     </div>
                   </motion.div>
                 </motion.div>
