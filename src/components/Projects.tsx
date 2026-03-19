@@ -34,8 +34,8 @@ const projects: Project[] = [
       'Mobile-responsive Progressive Web App',
     ],
     icon: <Layers className="h-6 w-6" />,
-    github: '',
-    demo: '',
+    github: 'https://github.com/Saiteja1807200/home-hero-now',
+    demo: 'https://homehero-three.vercel.app',
     accentColor: 'from-blue-500 to-cyan-400',
   },
   {
