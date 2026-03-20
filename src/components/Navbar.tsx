@@ -39,15 +39,9 @@ const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
       if (isDropdownOpen) setIsDropdownOpen(false);
     };
 
-    const handleTouch = () => {
-      if (isDropdownOpen) setIsDropdownOpen(false);
-    };
-
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('touchstart', handleTouch);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('touchstart', handleTouch);
     };
   }, [isMobileMenuOpen, isDropdownOpen]);
 
