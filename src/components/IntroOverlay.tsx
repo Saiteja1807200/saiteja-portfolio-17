@@ -18,11 +18,9 @@ const IntroOverlay = ({ onComplete }: { onComplete: () => void }) => {
 
   const handleSkip = () => triggerExit();
 
-  if (phase === 'done') return null;
-
   return (
     <AnimatePresence>
-      {phase !== 'done' && (
+      {phase !== 'slide-up' || true ? (
         <motion.div
           className="fixed inset-0 z-[9999] flex items-center justify-center cursor-pointer"
           style={{ backgroundColor: '#020617' }}
