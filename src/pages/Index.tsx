@@ -18,6 +18,7 @@ const Index = () => {
   const location = useLocation();
   const [expandProject, setExpandProject] = useState<number | null>(null);
   const [isBlackTheme, setIsBlackTheme] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     const state = location.state as { scrollTo?: string; expandProject?: number } | null;
