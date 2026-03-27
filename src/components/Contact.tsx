@@ -76,9 +76,10 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20">
+    <section className="py-20 relative" style={{ backgroundColor: '#020617' }}>
+      <SearchlightEffect />
       
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h2 
             className="text-3xl md:text-4xl font-bold mb-4"
