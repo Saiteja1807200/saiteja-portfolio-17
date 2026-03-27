@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import IntroOverlay from '@/components/IntroOverlay';
 import { cn } from '@/lib/utils';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
