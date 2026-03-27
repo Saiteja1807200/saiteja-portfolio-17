@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import IntroOverlay from '@/components/IntroOverlay';
 import { cn } from '@/lib/utils';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -17,6 +18,7 @@ const Index = () => {
   const location = useLocation();
   const [expandProject, setExpandProject] = useState<number | null>(null);
   const [isBlackTheme, setIsBlackTheme] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     const state = location.state as { scrollTo?: string; expandProject?: number } | null;
@@ -54,6 +56,7 @@ const Index = () => {
 
   return (
     <div className={cn('min-h-screen', isBlackTheme && 'black')}>
+      {showIntro && <IntroOverlay onComplete={() => setShowIntro(false)} />}
       <RippleEffect />
       <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       <main>
