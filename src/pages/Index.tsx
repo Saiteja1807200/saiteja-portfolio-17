@@ -18,7 +18,9 @@ const Index = () => {
   const location = useLocation();
   const [expandProject, setExpandProject] = useState<number | null>(null);
   const [isBlackTheme, setIsBlackTheme] = useState(false);
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(() => {
+    return !sessionStorage.getItem('intro_seen');
+  });
 
   useEffect(() => {
     const state = location.state as { scrollTo?: string; expandProject?: number } | null;
@@ -56,7 +58,7 @@ const Index = () => {
 
   return (
     <div className={cn('min-h-screen', isBlackTheme && 'black')}>
-      {showIntro && <IntroOverlay onComplete={() => setShowIntro(false)} />}
+      {showIntro && <IntroOverlay onComplete={() => { setShowIntro(false); sessionStorage.setItem('intro_seen', 'true'); }} />}
       <RippleEffect />
       <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       <main>
