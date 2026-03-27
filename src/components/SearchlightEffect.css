@@ -1,0 +1,99 @@
+/* Container fills parent section */
+.searchlight-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle fog / haze for volumetric feel */
+.searchlight-haze {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 120% 80% at 50% 20%,
+    rgba(148, 163, 184, 0.04) 0%,
+    transparent 70%
+  );
+}
+
+/* Origin point of the beam - centered near top */
+.searchlight-origin {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  z-index: 1;
+}
+
+/* The rotating cone beam */
+.searchlight-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 500px;
+  height: 900px;
+  transform-origin: 0% 0%;
+  animation: searchlight-sweep 8s ease-in-out infinite;
+  /* Cone shape via clip-path */
+  clip-path: polygon(0% 0%, -60% 100%, 60% 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(186, 210, 255, 0.18) 0%,
+    rgba(186, 210, 255, 0.08) 30%,
+    rgba(186, 210, 255, 0.02) 60%,
+    transparent 100%
+  );
+  filter: blur(18px);
+}
+
+/* Sweep animation - smooth left to right and back */
+@keyframes searchlight-sweep {
+  0% {
+    transform: rotate(-55deg);
+  }
+  50% {
+    transform: rotate(55deg);
+  }
+  100% {
+    transform: rotate(-55deg);
+  }
+}
+
+/* Subtle water ripple at the bottom */
+.searchlight-ripple {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(
+    0deg,
+    rgba(148, 163, 184, 0.03) 0%,
+    transparent 100%
+  );
+  animation: ripple-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes ripple-shimmer {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scaleY(1.15);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .searchlight-beam {
+    width: 300px;
+    height: 600px;
+    filter: blur(14px);
+  }
+}
