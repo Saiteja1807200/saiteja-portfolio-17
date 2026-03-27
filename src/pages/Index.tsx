@@ -58,7 +58,7 @@ const Index = () => {
 
   return (
     <div className={cn('min-h-screen', isBlackTheme && 'black')}>
-      {showIntro && <IntroOverlay onComplete={() => setShowIntro(false)} />}
+      {showIntro && <IntroOverlay onComplete={() => { setShowIntro(false); sessionStorage.setItem('intro_seen', 'true'); }} />}
       <RippleEffect />
       <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       <main>
