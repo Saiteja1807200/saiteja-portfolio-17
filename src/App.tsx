@@ -9,6 +9,9 @@ import Index from "./pages/Index";
 import AboutPage from "./pages/About";
 import ResumePage from "./pages/Resume";
 import ContactPage from "./pages/Contact";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import AdminBlog from "./pages/AdminBlog";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
