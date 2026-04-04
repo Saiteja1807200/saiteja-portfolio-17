@@ -53,6 +53,7 @@ const Navbar = ({ isBlackTheme, onThemeToggle }: NavbarProps) => {
     { title: 'Home', path: '/' },
     { title: 'About', path: '/about' },
     { title: 'Resume', path: '/resume' },
+    { title: 'Blog', path: '/blog' },
     { title: 'Contact', path: '/contact' },
   ];
 

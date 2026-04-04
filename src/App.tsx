@@ -25,6 +25,9 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<PageTransition><AboutPage /></PageTransition>} />
         <Route path="/resume" element={<PageTransition><ResumePage /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
+        <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
+        <Route path="/blog/:slug" element={<PageTransition><BlogPost /></PageTransition>} />
+        <Route path="/admin/blog" element={<PageTransition><AdminBlog /></PageTransition>} />
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>
