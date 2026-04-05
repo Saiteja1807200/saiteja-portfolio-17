@@ -17,6 +17,7 @@ const AdminAuthGate = ({ children }: AdminAuthGateProps) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -32,13 +33,18 @@ const AdminAuthGate = ({ children }: AdminAuthGateProps) => {
     return () => subscription.unsubscribe();
   }, []);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
     setSubmitting(true);
 
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) setError(error.message);
+    if (isSignUp) {
+      const { error } = await supabase.auth.signUp({ email, password });
+      if (error) setError(error.message);
+    } else {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) setError(error.message);
+    }
     setSubmitting(false);
   };
 
@@ -60,10 +66,10 @@ const AdminAuthGate = ({ children }: AdminAuthGateProps) => {
         <Card className="w-full max-w-sm border-border/50 bg-card/50 backdrop-blur-sm">
           <CardHeader className="text-center">
             <Lock className="h-8 w-8 text-primary mx-auto mb-2" />
-            <CardTitle className="text-xl">Admin Login</CardTitle>
+            <CardTitle className="text-xl">{isSignUp ? 'Create Admin Account' : 'Admin Login'}</CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleLogin} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <Input
                 type="email"
                 placeholder="Email"
@@ -83,8 +89,13 @@ const AdminAuthGate = ({ children }: AdminAuthGateProps) => {
               {error && <p className="text-sm text-destructive">{error}</p>}
               <Button type="submit" className="w-full" disabled={submitting}>
                 {submitting && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
-                Sign In
+                {isSignUp ? 'Sign Up' : 'Sign In'}
               </Button>
+              <p className="text-center text-sm text-muted-foreground">
+                <button type="button" onClick={() => setIsSignUp(!isSignUp)} className="text-primary hover:underline">
+                  {isSignUp ? 'Already have an account? Sign In' : 'Need an account? Sign Up'}
+                </button>
+              </p>
             </form>
           </CardContent>
         </Card>
