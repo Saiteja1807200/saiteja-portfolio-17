@@ -211,39 +211,13 @@ const BlogEditor = () => {
             )}
           </div>
 
-          {/* Content editor with preview toggle */}
+          {/* Rich Text Content Editor */}
           <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <Button
-                type="button"
-                variant={preview ? 'ghost' : 'secondary'}
-                size="sm"
-                onClick={() => setPreview(false)}
-              >
-                <Edit3 className="h-4 w-4 mr-1" /> Write
-              </Button>
-              <Button
-                type="button"
-                variant={preview ? 'secondary' : 'ghost'}
-                size="sm"
-                onClick={() => setPreview(true)}
-              >
-                <Eye className="h-4 w-4 mr-1" /> Preview
-              </Button>
-            </div>
-            {preview ? (
-              <div
-                className="min-h-[300px] rounded-md border border-border/50 bg-secondary/30 p-4 prose prose-invert prose-sm max-w-none"
-                dangerouslySetInnerHTML={{ __html: form.content }}
-              />
-            ) : (
-              <Textarea
-                placeholder="Write your blog content in HTML..."
-                value={form.content}
-                onChange={(e) => setForm({ ...form, content: e.target.value })}
-                className="min-h-[300px] bg-secondary/50 font-mono text-sm"
-              />
-            )}
+            <label className="text-sm font-medium text-muted-foreground">Content</label>
+            <RichTextEditor
+              content={form.content}
+              onChange={(html) => setForm({ ...form, content: html })}
+            />
           </div>
 
           {/* Actions */}
