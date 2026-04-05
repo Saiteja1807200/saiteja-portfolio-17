@@ -22,7 +22,6 @@ const BlogEditor = () => {
   const [posts, setPosts] = useState<Tables<'blog_posts'>[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [preview, setPreview] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [tagInput, setTagInput] = useState('');
 
