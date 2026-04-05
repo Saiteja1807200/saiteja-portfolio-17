@@ -37,13 +37,8 @@ const AdminAuthGate = ({ children }: AdminAuthGateProps) => {
     setError('');
     setSubmitting(true);
 
-    if (isSignUp) {
-      const { error } = await supabase.auth.signUp({ email, password });
-      if (error) setError(error.message);
-    } else {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) setError(error.message);
-    }
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) setError(error.message);
     setSubmitting(false);
   };
 
@@ -65,7 +60,7 @@ const AdminAuthGate = ({ children }: AdminAuthGateProps) => {
         <Card className="w-full max-w-sm border-border/50 bg-card/50 backdrop-blur-sm">
           <CardHeader className="text-center">
             <Lock className="h-8 w-8 text-primary mx-auto mb-2" />
-            <CardTitle className="text-xl">{isSignUp ? 'Create Admin Account' : 'Admin Login'}</CardTitle>
+            <CardTitle className="text-xl">Admin Login</CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -88,13 +83,8 @@ const AdminAuthGate = ({ children }: AdminAuthGateProps) => {
               {error && <p className="text-sm text-destructive">{error}</p>}
               <Button type="submit" className="w-full" disabled={submitting}>
                 {submitting && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
-                {isSignUp ? 'Sign Up' : 'Sign In'}
+                Sign In
               </Button>
-              <p className="text-center text-sm text-muted-foreground">
-                <button type="button" onClick={() => setIsSignUp(!isSignUp)} className="text-primary hover:underline">
-                  {isSignUp ? 'Already have an account? Sign In' : 'Need an account? Sign Up'}
-                </button>
-              </p>
             </form>
           </CardContent>
         </Card>
