@@ -61,12 +61,16 @@ const BlogDetail = ({ post }: BlogDetailProps) => {
       </div>
 
       <div
-        className="prose prose-invert prose-primary max-w-none
-          prose-headings:text-foreground prose-p:text-muted-foreground
+        className="prose prose-invert prose-lg prose-primary max-w-none
+          prose-headings:text-foreground prose-headings:font-display
+          prose-p:text-muted-foreground prose-p:leading-relaxed
           prose-a:text-primary prose-strong:text-foreground
           prose-code:text-primary prose-code:bg-secondary/50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
           prose-pre:bg-secondary/50 prose-pre:border prose-pre:border-border/50
-          prose-img:rounded-lg prose-blockquote:border-primary/50"
+          prose-img:rounded-lg prose-img:mx-auto prose-img:my-8 prose-img:shadow-lg
+          prose-blockquote:border-primary/50 prose-blockquote:italic
+          prose-hr:border-border/50
+          prose-li:text-muted-foreground"
         dangerouslySetInnerHTML={{ __html: post.content || '' }}
       />
     </article>
