@@ -3,7 +3,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Loader2, Save, Eye, Edit3, Trash2, Plus, X } from 'lucide-react';
+import { Loader2, Save, Trash2, Plus, X, Edit3 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { Tables } from '@/integrations/supabase/types';
 import BlogImageUpload from './BlogImageUpload';
