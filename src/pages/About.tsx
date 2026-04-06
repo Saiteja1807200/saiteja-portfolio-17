@@ -11,6 +11,7 @@ import { useAccessToken } from '@/hooks/useAccessToken';
 
 const AboutPage = () => {
   const [isBlackTheme, setIsBlackTheme] = useState(false);
+  const { hasAccess, checking } = useAccessToken();
 
   // Scroll to top on page load
   useEffect(() => {
