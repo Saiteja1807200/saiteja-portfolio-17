@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Brain, Code, Users, MessageCircle } from 'lucide-react';
+import { Brain, Code, Users, MessageCircle, Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import RippleEffect from '@/components/RippleEffect';
 import profileImage from '@/assets/profile.jpg';
+import { useAccessToken } from '@/hooks/useAccessToken';
 
 const AboutPage = () => {
   const [isBlackTheme, setIsBlackTheme] = useState(false);
