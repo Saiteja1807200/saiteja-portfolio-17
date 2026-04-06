@@ -3,13 +3,15 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Brain, Code, Users, MessageCircle } from 'lucide-react';
+import { Brain, Code, Users, MessageCircle, Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import RippleEffect from '@/components/RippleEffect';
 import profileImage from '@/assets/profile.jpg';
+import { useAccessToken } from '@/hooks/useAccessToken';
 
 const AboutPage = () => {
   const [isBlackTheme, setIsBlackTheme] = useState(false);
+  const { hasAccess, checking } = useAccessToken();
 
   // Scroll to top on page load
   useEffect(() => {
@@ -99,15 +101,31 @@ const AboutPage = () => {
                 transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="rounded-2xl overflow-hidden shadow-xl relative">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent opacity-70 z-10"></div>
-                  <motion.img 
-                    src={profileImage} 
-                    alt="Saiteja Akinepelli"
-                    className="w-full object-cover aspect-[4/5]"
-                    initial={{ scale: 1.15, filter: 'blur(8px)' }}
-                    animate={{ scale: 1, filter: 'blur(0px)' }}
-                    transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
-                  />
+                  {hasAccess ? (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent opacity-70 z-10"></div>
+                      <motion.img 
+                        src={profileImage} 
+                        alt="Saiteja Akinepelli"
+                        className="w-full object-cover aspect-[4/5]"
+                        initial={{ scale: 1.15, filter: 'blur(8px)' }}
+                        animate={{ scale: 1, filter: 'blur(0px)' }}
+                        transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+                      />
+                    </>
+                  ) : (
+                    <div className="w-full aspect-[4/5] bg-muted/30 backdrop-blur-xl flex flex-col items-center justify-center gap-4 border border-white/10">
+                      <div className="p-4 rounded-full bg-primary/10">
+                        <Lock className="h-10 w-10 text-primary/60" />
+                      </div>
+                      <div className="text-center px-6">
+                        <p className="font-semibold text-foreground/80 mb-1">Portfolio Image</p>
+                        <p className="text-sm text-muted-foreground">
+                          {checking ? 'Verifying access...' : 'This image is restricted. Request access from Saiteja.'}
+                        </p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </div>

@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      access_tokens: {
+        Row: {
+          created_at: string
+          expires_at: string | null
+          id: string
+          label: string | null
+          token: string
+          view_count: number
+        }
+        Insert: {
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          label?: string | null
+          token?: string
+          view_count?: number
+        }
+        Update: {
+          created_at?: string
+          expires_at?: string | null
+          id?: string
+          label?: string | null
+          token?: string
+          view_count?: number
+        }
+        Relationships: []
+      }
       blog_posts: {
         Row: {
           content: string | null
@@ -56,12 +83,44 @@ export type Database = {
         }
         Relationships: []
       }
+      token_views: {
+        Row: {
+          id: string
+          token_id: string
+          viewed_at: string
+          viewer_info: Json | null
+        }
+        Insert: {
+          id?: string
+          token_id: string
+          viewed_at?: string
+          viewer_info?: Json | null
+        }
+        Update: {
+          id?: string
+          token_id?: string
+          viewed_at?: string
+          viewer_info?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "token_views_token_id_fkey"
+            columns: ["token_id"]
+            isOneToOne: false
+            referencedRelation: "access_tokens"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      log_token_view: {
+        Args: { p_token: string; p_viewer_info?: Json }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never

@@ -4,14 +4,16 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { GraduationCap, Briefcase, Award, Download, Check } from 'lucide-react';
+import { GraduationCap, Briefcase, Award, Download, Check, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import RippleEffect from '@/components/RippleEffect';
+import { useAccessToken } from '@/hooks/useAccessToken';
 
 const ResumePage = () => {
   const [isBlackTheme, setIsBlackTheme] = useState(false);
+  const { hasAccess } = useAccessToken();
 
   // Scroll to top on page load
   useEffect(() => {
@@ -91,10 +93,17 @@ const ResumePage = () => {
                 An overview of my educational background, skills, and experience.
               </p>
               
-              <Button size="lg" onClick={downloadResume} className="gap-2">
-                <Download className="h-5 w-5" />
-                Download Resume
-              </Button>
+              {hasAccess ? (
+                <Button size="lg" onClick={downloadResume} className="gap-2">
+                  <Download className="h-5 w-5" />
+                  Download Resume
+                </Button>
+              ) : (
+                <Button size="lg" disabled className="gap-2 opacity-60">
+                  <Lock className="h-5 w-5" />
+                  Resume — Access Required
+                </Button>
+              )}
             </motion.div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
