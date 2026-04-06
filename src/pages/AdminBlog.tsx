@@ -3,6 +3,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AdminAuthGate from '@/components/blog/AdminAuthGate';
 import BlogEditor from '@/components/blog/BlogEditor';
+import AccessTokenManager from '@/components/admin/AccessTokenManager';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const AdminBlog = () => {
   const [isBlackTheme, setIsBlackTheme] = useState(false);
