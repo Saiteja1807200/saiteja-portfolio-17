@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import RippleEffect from '@/components/RippleEffect';
-import { useAccessToken } from '@/hooks/useAccessToken';
+
 
 const ResumePage = () => {
   const [isBlackTheme, setIsBlackTheme] = useState(false);
