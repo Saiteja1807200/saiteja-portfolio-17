@@ -101,30 +101,30 @@ const AboutPage = () => {
                 transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               >
                 <div className="rounded-2xl overflow-hidden shadow-xl relative">
-                  {hasAccess ? (
-                    <>
-                      <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent opacity-70 z-10"></div>
-                      <motion.img 
-                        src={profileImage} 
-                        alt="Saiteja Akinepelli"
-                        className="w-full object-cover aspect-[4/5]"
-                        initial={{ scale: 1.15, filter: 'blur(8px)' }}
-                        animate={{ scale: 1, filter: 'blur(0px)' }}
-                        transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
-                      />
-                    </>
-                  ) : (
-                    <div className="w-full aspect-[4/5] bg-muted/30 backdrop-blur-xl flex flex-col items-center justify-center gap-4 border border-white/10">
-                      <div className="p-4 rounded-full bg-primary/10">
+                  <motion.img 
+                    src={profileImage} 
+                    alt="Saiteja Akinepelli"
+                    className={cn(
+                      "w-full object-cover aspect-[4/5] transition-all duration-700",
+                      !hasAccess && "blur-xl scale-105"
+                    )}
+                    initial={{ scale: 1.15, filter: 'blur(8px)' }}
+                    animate={{ scale: hasAccess ? 1 : 1.05, filter: hasAccess ? 'blur(0px)' : 'blur(20px)' }}
+                    transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+                  />
+                  {!hasAccess && (
+                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-background/30 backdrop-blur-sm">
+                      <div className="p-4 rounded-full bg-primary/10 mb-3">
                         <Lock className="h-10 w-10 text-primary/60" />
                       </div>
-                      <div className="text-center px-6">
-                        <p className="font-semibold text-foreground/80 mb-1">Portfolio Image</p>
-                        <p className="text-sm text-muted-foreground">
-                          {checking ? 'Verifying access...' : 'This image is restricted. Request access from Saiteja.'}
-                        </p>
-                      </div>
+                      <p className="font-semibold text-foreground/80 mb-1">Portfolio Image</p>
+                      <p className="text-sm text-muted-foreground">
+                        {checking ? 'Verifying access...' : 'Request access from Saiteja'}
+                      </p>
                     </div>
+                  )}
+                  {hasAccess && (
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-transparent opacity-70 z-10"></div>
                   )}
                 </div>
               </motion.div>

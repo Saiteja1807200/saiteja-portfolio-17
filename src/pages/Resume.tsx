@@ -93,16 +93,10 @@ const ResumePage = () => {
                 An overview of my educational background, skills, and experience.
               </p>
               
-              {hasAccess ? (
-                <Button size="lg" onClick={downloadResume} className="gap-2">
-                  <Download className="h-5 w-5" />
-                  Download Resume
-                </Button>
-              ) : (
-                <Button size="lg" disabled className="gap-2 opacity-60">
-                  <Lock className="h-5 w-5" />
-                  Resume — Access Required
-                </Button>
+              <Button size="lg" onClick={downloadResume} className="gap-2">
+                <Download className="h-5 w-5" />
+                Download Resume
+              </Button>
               )}
             </motion.div>
             
