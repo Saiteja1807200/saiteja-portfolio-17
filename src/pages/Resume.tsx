@@ -97,7 +97,6 @@ const ResumePage = () => {
                 <Download className="h-5 w-5" />
                 Download Resume
               </Button>
-              )}
             </motion.div>
             
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
