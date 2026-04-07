@@ -13,7 +13,7 @@ import RippleEffect from '@/components/RippleEffect';
 
 const ResumePage = () => {
   const [isBlackTheme, setIsBlackTheme] = useState(false);
-  const { hasAccess } = useAccessToken();
+  
 
   // Scroll to top on page load
   useEffect(() => {
