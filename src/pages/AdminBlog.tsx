@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import AdminAuthGate from '@/components/blog/AdminAuthGate';
 import BlogEditor from '@/components/blog/BlogEditor';
 import AccessTokenManager from '@/components/admin/AccessTokenManager';
+import AccessRequestManager from '@/components/admin/AccessRequestManager';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const AdminBlog = () => {
@@ -29,12 +30,16 @@ const AdminBlog = () => {
             <TabsList className="mb-6">
               <TabsTrigger value="blog">Blog Posts</TabsTrigger>
               <TabsTrigger value="access">Access Links</TabsTrigger>
+              <TabsTrigger value="requests">Requests</TabsTrigger>
             </TabsList>
             <TabsContent value="blog">
               <BlogEditor />
             </TabsContent>
             <TabsContent value="access">
               <AccessTokenManager />
+            </TabsContent>
+            <TabsContent value="requests">
+              <AccessRequestManager />
             </TabsContent>
           </Tabs>
         </AdminAuthGate>
