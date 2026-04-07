@@ -3,9 +3,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, BookOpen, Users, MessageSquare, Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import profileImage from '@/assets/profile.jpg';
 import { useAccessToken } from '@/hooks/useAccessToken';
+import RequestAccessDialog from '@/components/RequestAccessDialog';
 
 const About = () => {
   const { hasAccess, checking } = useAccessToken();
@@ -107,9 +109,15 @@ const About = () => {
                   <Lock className="h-10 w-10 text-primary/60" />
                 </div>
                 <p className="font-semibold text-foreground/80 mb-1">Portfolio Image</p>
-                <p className="text-sm text-muted-foreground">
-                  {checking ? 'Verifying access...' : 'Request access from Saiteja'}
-                </p>
+                {checking ? (
+                  <p className="text-sm text-muted-foreground">Verifying access...</p>
+                ) : (
+                  <RequestAccessDialog>
+                    <Button size="sm" variant="outline" className="mt-1 gap-1.5">
+                      Request Access
+                    </Button>
+                  </RequestAccessDialog>
+                )}
               </div>
             )}
           </motion.div>

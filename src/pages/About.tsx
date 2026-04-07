@@ -5,6 +5,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Brain, Code, Users, MessageCircle, Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import RequestAccessDialog from '@/components/RequestAccessDialog';
 import RippleEffect from '@/components/RippleEffect';
 import profileImage from '@/assets/profile.jpg';
 import { useAccessToken } from '@/hooks/useAccessToken';
@@ -117,10 +119,16 @@ const AboutPage = () => {
                       <div className="p-4 rounded-full bg-primary/10 mb-3">
                         <Lock className="h-10 w-10 text-primary/60" />
                       </div>
-                      <p className="font-semibold text-foreground/80 mb-1">Portfolio Image</p>
-                      <p className="text-sm text-muted-foreground">
-                        {checking ? 'Verifying access...' : 'Request access from Saiteja'}
-                      </p>
+                       <p className="font-semibold text-foreground/80 mb-1">Portfolio Image</p>
+                       {checking ? (
+                         <p className="text-sm text-muted-foreground">Verifying access...</p>
+                       ) : (
+                         <RequestAccessDialog>
+                           <Button size="sm" variant="outline" className="mt-1 gap-1.5">
+                             Request Access
+                           </Button>
+                         </RequestAccessDialog>
+                       )}
                     </div>
                   )}
                   {hasAccess && (
