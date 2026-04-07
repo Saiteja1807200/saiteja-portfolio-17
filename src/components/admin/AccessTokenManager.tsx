@@ -61,7 +61,8 @@ const AccessTokenManager = () => {
   };
 
   const copyLink = (token: string) => {
-    const url = `${window.location.origin}/about?access=${token}`;
+    const publishedOrigin = 'https://saitejaakinepellii.lovable.app';
+    const url = `${publishedOrigin}/?access=${token}`;
     navigator.clipboard.writeText(url);
     toast.success('Link copied to clipboard');
   };

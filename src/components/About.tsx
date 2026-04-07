@@ -1,11 +1,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, BookOpen, Users, MessageSquare } from 'lucide-react';
+import { Brain, BookOpen, Users, MessageSquare, Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 import profileImage from '@/assets/profile.jpg';
+import { useAccessToken } from '@/hooks/useAccessToken';
 
 const About = () => {
+  const { hasAccess, checking } = useAccessToken();
   const features = [
     {
       icon: <Brain className="h-10 w-10 text-primary" />,
@@ -80,7 +83,7 @@ const About = () => {
           </motion.div>
           
           <motion.div 
-            className="glass-card rounded-2xl overflow-hidden shadow-xl"
+            className="glass-card rounded-2xl overflow-hidden shadow-xl relative"
             initial={{ opacity: 0, scale: 0.85, rotateY: 15 }}
             whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
             viewport={{ once: true, margin: '-100px' }}
@@ -89,12 +92,26 @@ const About = () => {
             <motion.img 
               src={profileImage} 
               alt="Saiteja Akinepelli"
-              className="block w-full object-contain"
+              className={cn(
+                "block w-full object-contain transition-all duration-700",
+                !hasAccess && "blur-xl scale-105"
+              )}
               initial={{ scale: 1.15, filter: 'blur(8px)' }}
-              whileInView={{ scale: 1, filter: 'blur(0px)' }}
+              whileInView={{ scale: hasAccess ? 1 : 1.05, filter: hasAccess ? 'blur(0px)' : 'blur(20px)' }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
             />
+            {!hasAccess && (
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-background/30 backdrop-blur-sm">
+                <div className="p-4 rounded-full bg-primary/10 mb-3">
+                  <Lock className="h-10 w-10 text-primary/60" />
+                </div>
+                <p className="font-semibold text-foreground/80 mb-1">Portfolio Image</p>
+                <p className="text-sm text-muted-foreground">
+                  {checking ? 'Verifying access...' : 'Request access from Saiteja'}
+                </p>
+              </div>
+            )}
           </motion.div>
         </div>
         
