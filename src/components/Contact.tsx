@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useToast } from '@/components/ui/use-toast';
-import SearchlightEffect from './SearchlightEffect';
+
 
 const Contact = () => {
   const { toast } = useToast();
@@ -77,7 +77,7 @@ const Contact = () => {
 
   return (
     <section className="py-20 relative" style={{ backgroundColor: '#020617' }}>
-      <SearchlightEffect />
+      
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
