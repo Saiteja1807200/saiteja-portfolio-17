@@ -11,7 +11,7 @@ import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
-import RippleEffect from '@/components/RippleEffect';
+import SplashCursor from '@/components/SplashCursor';
 
 
 const Index = () => {
@@ -59,7 +59,7 @@ const Index = () => {
   return (
     <div className={cn('min-h-screen', isBlackTheme && 'black')}>
       {showIntro && <IntroOverlay onComplete={() => { setShowIntro(false); sessionStorage.setItem('intro_seen', 'true'); }} />}
-      <RippleEffect />
+      <SplashCursor />
       <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       <main>
         <Hero />
