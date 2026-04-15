@@ -8,7 +8,7 @@ import { GraduationCap, Briefcase, Award, Download, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import RippleEffect from '@/components/RippleEffect';
+import SplashCursor from '@/components/SplashCursor';
 
 
 const ResumePage = () => {
@@ -76,7 +76,7 @@ const ResumePage = () => {
 
   return (
     <div className={cn('min-h-screen', isBlackTheme && 'black')}>
-      <RippleEffect />
+      <SplashCursor />
       <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       
       <main className="pt-24 pb-16">

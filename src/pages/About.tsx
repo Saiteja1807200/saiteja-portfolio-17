@@ -7,7 +7,7 @@ import { Brain, Code, Users, MessageCircle, Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import RequestAccessDialog from '@/components/RequestAccessDialog';
-import RippleEffect from '@/components/RippleEffect';
+import SplashCursor from '@/components/SplashCursor';
 import profileImage from '@/assets/profile.jpg';
 import { useAccessToken } from '@/hooks/useAccessToken';
 
@@ -54,7 +54,7 @@ const AboutPage = () => {
 
   return (
     <div className={cn('min-h-screen', isBlackTheme && 'black')}>
-      <RippleEffect />
+      <SplashCursor />
       <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       
       <main className="pt-24 pb-16">

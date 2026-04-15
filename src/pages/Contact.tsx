@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Contact from '@/components/Contact';
-import RippleEffect from '@/components/RippleEffect';
+import SplashCursor from '@/components/SplashCursor';
 
 const ContactPage = () => {
   const [isBlackTheme, setIsBlackTheme] = useState(false);
@@ -26,7 +26,7 @@ const ContactPage = () => {
 
   return (
     <div className={cn('min-h-screen', isBlackTheme && 'black')}>
-      <RippleEffect />
+      <SplashCursor />
       <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       
       <main className="pt-24 pb-16">
