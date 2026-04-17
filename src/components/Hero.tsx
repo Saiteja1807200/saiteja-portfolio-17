@@ -4,7 +4,6 @@ import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import SplitText from './SplitText';
-import Aurora from './Aurora';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -15,15 +14,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-background">
-      <div className="absolute inset-0 opacity-70">
-        <Aurora 
-          colorStops={["#5227FF", "#7cff67", "#5227FF"]}
-          amplitude={2.0}
-          blend={0.8}
-          speed={1.8}
-        />
-      </div>
+    <section className="relative py-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
