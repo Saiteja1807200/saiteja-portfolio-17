@@ -379,6 +379,7 @@ const ParallaxScene: React.FC = () => {
   useEffect(() => {
     const root = wrapRef.current;
     if (!root) return;
+    document.body.classList.add('parallax-active');
     const q = (sel: string) => root.querySelector(sel) as SVGElement | null;
     const qa = (sel: string) => Array.from(root.querySelectorAll(sel)) as SVGElement[];
 
