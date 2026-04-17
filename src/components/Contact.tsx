@@ -76,7 +76,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="py-20 relative" style={{ backgroundColor: '#020617' }}>
+    <section className="py-20 relative">
       
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
