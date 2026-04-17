@@ -1,0 +1,16 @@
+/* Fixed full-viewport SVG parallax scene that sits behind all page content */
+.parallax-scene {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.parallax-scene > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
