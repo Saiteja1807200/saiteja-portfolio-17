@@ -380,14 +380,11 @@ const ParallaxScene: React.FC = () => {
     const root = wrapRef.current;
     if (!root) return;
     document.body.classList.add('parallax-active');
-    const q = (sel: string) => root.querySelector(sel) as SVGElement | null;
-    const qa = (sel: string) => Array.from(root.querySelectorAll(sel)) as SVGElement[];
 
-    // Hide CodePen's own scroll-prompt UI (we have our own portfolio content on top)
+    const qa = (sel: string) => Array.from(root.querySelectorAll(sel)) as SVGElement[];
     qa('#info, #info2').forEach(el => { (el as any).style.display = 'none'; });
 
     const ctx = gsap.context(() => {
-      // Initial state
       gsap.set('#scene2', { autoAlpha: 0 });
       gsap.set('#scene3', { visibility: 'visible', autoAlpha: 0 });
       gsap.set('#bats', { autoAlpha: 0 });
@@ -402,32 +399,30 @@ const ParallaxScene: React.FC = () => {
         },
       });
 
-      // ----- Scene 1 → Scene 2 (sun sets, day → dusk) -----
       tl.to('#cloud1', { x: 800, duration: 1, ease: 'none' }, 0)
         .to('#cloud2', { x: 600, duration: 1, ease: 'none' }, 0)
         .to('#cloud3', { x: -700, duration: 1, ease: 'none' }, 0)
         .to('#cloud4', { x: -500, duration: 1, ease: 'none' }, 0)
         .to('#cloudsBig-L', { x: -250, duration: 1, ease: 'none' }, 0)
         .to('#cloudsBig-R', { x: 250, duration: 1, ease: 'none' }, 0)
-        // Sun moves down via radial gradient cy
         .to('#bg_grad', { attr: { cy: 250 }, duration: 1, ease: 'none' }, 0)
-        // Hills 1 fade as we transition
         .to('#hills1', { y: 150, autoAlpha: 0, duration: 0.6 }, 0.4);
 
-      // Bring scene 2 in
       tl.to('#scene2', { autoAlpha: 1, duration: 0.4 }, 0.5)
         .from('#hills2 path', { y: 100, autoAlpha: 0, stagger: 0.05, duration: 0.5 }, 0.55)
         .to('#bats', { autoAlpha: 1, duration: 0.3 }, 0.7)
         .to('#bats', { x: 100, y: -30, duration: 0.6, ease: 'sine.inOut' }, 0.7);
 
-      // ----- Scene 2 → Scene 3 (dusk → night with stars) -----
       tl.to('#scene2', { autoAlpha: 0, duration: 0.3 }, 1.3)
         .to('#scene3', { autoAlpha: 1, duration: 0.4 }, 1.3)
         .to('#stars', { autoAlpha: 1, duration: 0.5 }, 1.5)
         .from('#hills3 > *', { y: 80, autoAlpha: 0, stagger: 0.05, duration: 0.5 }, 1.4);
     }, root);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      document.body.classList.remove('parallax-active');
+    };
   }, []);
 
   return (
