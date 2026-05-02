@@ -41,7 +41,7 @@ const ResumePage = () => {
       degree: "Intermediate (MPC)",
       institution: "Sri Chaitanya Junior College",
       period: "Completed",
-      description: "Studied Mathematics, Physics, and Chemistry",
+      description: "Studied Mathematics, Physics and Chemistry",
       active: false
     },
     {
@@ -90,7 +90,7 @@ const ResumePage = () => {
             >
               <h1 className="text-4xl md:text-5xl font-bold mb-6">My Resume</h1>
               <p className="text-xl text-foreground/80 mb-8">
-                An overview of my educational background, skills, and experience.
+                An overview of my educational background, skills and experience.
               </p>
               
               <Button size="lg" onClick={downloadResume} className="gap-2">

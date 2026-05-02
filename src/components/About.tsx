@@ -74,10 +74,10 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold">My Journey</h3>
             <p className="text-foreground/80">
-              I did my MCA at Vaageswari College of Engineering, which is where I really got into both software development and machine learning. Along the way I built a few full stack projects in React and PostgreSQL, including a service marketplace app with role based logins, bookings, and email notifications.
+              I did my MCA at Vaageswari College of Engineering, which is where I really got into both software development and machine learning. Along the way I built a few full stack projects in React and PostgreSQL, including a service marketplace app with role based logins, bookings and email notifications.
             </p>
             <p className="text-foreground/80">
-              On the ML side I&apos;ve worked with Python, OpenCV, Scikit-learn, and NLTK on things like a license plate recognition system and a model to flag fake recruitment posts. I&apos;m comfortable across the whole development cycle, from sketching out requirements to testing and shipping.
+              On the ML side I&apos;ve worked with Python, OpenCV, Scikit-learn and NLTK on things like a license plate recognition system and a model to flag fake recruitment posts. I&apos;m comfortable across the whole development cycle, from sketching out requirements to testing and shipping.
             </p>
             <p className="text-foreground/80">
               Right now I&apos;m looking for a Full Stack or Machine Learning role where I can keep building useful things and learn from a strong team.
