@@ -76,7 +76,7 @@ const Skills = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Technical expertise spanning full-stack web development and machine learning, built through hands-on projects and academic training.
+            A mix of tools I use day to day across web development and machine learning, picked up through real projects and a lot of late night tinkering.
           </motion.p>
         </div>
         

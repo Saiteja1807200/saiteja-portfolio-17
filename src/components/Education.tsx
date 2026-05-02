@@ -53,7 +53,7 @@ const Education = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            My academic path that has shaped my knowledge and skills in Computer Science and Machine Learning.
+            A quick look at the schools and programs that shaped how I think about computer science and ML.
           </motion.p>
         </div>
         
@@ -91,7 +91,7 @@ const Education = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-            My educational journey has equipped me with a strong foundation in Computer Science and Machine Learning, preparing me for the challenges of the technology industry. I continue to expand my knowledge through self-learning and practical projects.
+            School gave me the foundation, but most of what I know today comes from building side projects, breaking things, and reading way too many docs. I try to keep learning that way.
           </p>
         </motion.div>
       </div>

@@ -45,7 +45,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            An aspiring Full Stack Developer and Machine Learning enthusiast with a strong interest in building practical, data-driven software solutions. Experienced in developing full-stack web applications and implementing machine learning projects using modern development tools and Python-based technologies. Interested in contributing to scalable applications while continuously improving skills in software development, system design, and data-driven technologies.
+            I build full stack web apps and explore machine learning on the side. Most of my work lives at the intersection of clean React frontends, solid Python backends, and ML models that actually solve a problem. I like shipping things that feel fast, look good, and hold up in the real world.
           </motion.p>
           
           <motion.div 

@@ -60,7 +60,7 @@ const About = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            A recent Master of Computer Applications graduate with hands-on experience in full-stack web development and machine learning. I build scalable, user-focused applications and enjoy solving real-world problems through software engineering and data-driven solutions.
+            I recently finished my Master of Computer Applications and spend most of my time building web apps and tinkering with ML projects. I care about software that feels good to use and code that other people can actually read.
           </motion.p>
         </div>
         
@@ -74,13 +74,13 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold">My Journey</h3>
             <p className="text-foreground/80">
-              I hold a Master of Computer Applications from Vaageswari College of Engineering, where I developed a strong foundation in software development and machine learning. I've built full-stack web applications using React, PostgreSQL, and modern backend services — including a service marketplace platform featuring role-based authentication, booking workflows, and automated email notifications.
+              I did my MCA at Vaageswari College of Engineering, which is where I really got into both software development and machine learning. Along the way I built a few full stack projects in React and PostgreSQL, including a service marketplace app with role based logins, bookings, and email notifications.
             </p>
             <p className="text-foreground/80">
-              On the data science side, I've worked on computer vision and NLP projects using Python, OpenCV, Scikit-learn, and NLTK — from license plate recognition systems to recruitment fraud detection models. I'm well-versed in the Software Development Life Cycle, from requirement analysis through testing and deployment, and follow Agile practices to deliver iterative, high-quality results.
+              On the ML side I&apos;ve worked with Python, OpenCV, Scikit-learn, and NLTK on things like a license plate recognition system and a model to flag fake recruitment posts. I&apos;m comfortable across the whole development cycle, from sketching out requirements to testing and shipping.
             </p>
             <p className="text-foreground/80">
-              I'm actively seeking opportunities as a Full Stack Developer or in Machine Learning roles where I can apply my technical skills to build impactful, scalable solutions.
+              Right now I&apos;m looking for a Full Stack or Machine Learning role where I can keep building useful things and learn from a strong team.
             </p>
           </motion.div>
           
