@@ -18,7 +18,7 @@ const Education = () => {
       degree: "Intermediate (MPC)",
       institution: "Sri Chaitanya Junior College",
       period: "Completed",
-      specialization: "Mathematics, Physics, and Chemistry",
+      specialization: "Mathematics, Physics and Chemistry",
       icon: <Bookmark className="h-6 w-6" />,
       color: "bg-green-500"
     },
@@ -91,7 +91,7 @@ const Education = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-            School gave me the foundation, but most of what I know today comes from building side projects, breaking things, and reading way too many docs. I try to keep learning that way.
+            School gave me the foundation, but most of what I know today comes from building side projects, breaking things and reading way too many docs. I try to keep learning that way.
           </p>
         </motion.div>
       </div>

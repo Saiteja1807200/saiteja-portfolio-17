@@ -60,7 +60,7 @@ const Blog = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold font-display text-gradient mb-4">Blog</h1>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Thoughts, tutorials, and insights on tech, AI, and development.
+            Thoughts, tutorials and insights on tech, AI and development.
           </p>
         </div>
         <BlogList posts={posts} isLoading={loading} hasMore={hasMore} onLoadMore={loadMore} />

@@ -27,7 +27,7 @@ const projects: Project[] = [
       'Full-stack marketplace platform connecting customers with local service providers for household repair and maintenance services.',
     technologies: ['React', 'Supabase', 'PostgreSQL', 'Resend', 'Vercel'],
     features: [
-      'Role-based authentication for customers, service providers, and admin dashboards',
+      'Role-based authentication for customers, service providers and admin dashboards',
       'Booking lifecycle system with status transitions (pending, accepted, in-progress, completed)',
       'Provider approval workflow and service management',
       'Automated email verification and booking notifications',
@@ -46,7 +46,7 @@ const projects: Project[] = [
       'Computer vision system that detects vehicle license plates from images or video streams and extracts the alphanumeric characters automatically.',
     technologies: ['Python', 'OpenCV', 'Tesseract OCR'],
     features: [
-      'Image preprocessing using grayscale conversion, edge detection, and contour analysis',
+      'Image preprocessing using grayscale conversion, edge detection and contour analysis',
       'Automatic license plate detection from vehicle images',
       'Character extraction using OCR',
       'Optimized detection pipeline for real-time processing',
@@ -117,7 +117,7 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            A selection of projects showcasing my skills in full-stack development, computer vision, and machine learning.
+            A selection of projects showcasing my skills in full-stack development, computer vision and machine learning.
           </motion.p>
         </div>
 

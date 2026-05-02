@@ -45,7 +45,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            I build full stack web apps and explore machine learning on the side. Most of my work lives at the intersection of clean React frontends, solid Python backends, and ML models that actually solve a problem. I like shipping things that feel fast, look good, and hold up in the real world.
+            I build full stack web apps and explore machine learning on the side. Most of my work lives at the intersection of clean React frontends, solid Python backends and ML models that actually solve a problem. I like shipping things that feel fast, look good and hold up in the real world.
           </motion.p>
           
           <motion.div 
