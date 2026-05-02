@@ -1064,12 +1064,15 @@ function SplashCursor({
         position: 'fixed',
         top: 0,
         left: 0,
-        zIndex: 50,
+        zIndex: 0,
         pointerEvents: 'none',
         width: '100%',
-        height: '100%'
+        height: '100%',
+        mixBlendMode: 'screen',
+        animation: 'splashFadeIn 1.2s ease-out both'
       }}
     >
+      <style>{`@keyframes splashFadeIn { from { opacity: 0 } to { opacity: 1 } }`}</style>
       <canvas
         ref={canvasRef}
         id="fluid"
