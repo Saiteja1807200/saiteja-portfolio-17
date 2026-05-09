@@ -17,7 +17,7 @@ const Hero = () => {
   return (
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <Aurora colorStops={["#FF5E62", "#FF9966", "#FFC371"]} amplitude={1.0} blend={0.5} speed={1.0} />
+        <Aurora colorStops={["#5227FF", "#7cff67", "#5227FF"]} amplitude={1.0} blend={0.5} speed={1.0} />
       </div>
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
