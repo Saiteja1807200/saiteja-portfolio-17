@@ -12,7 +12,6 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import SplashCursor from '@/components/SplashCursor';
-import ParallaxScene from '@/components/ParallaxScene';
 
 
 const Index = () => {
@@ -60,7 +59,6 @@ const Index = () => {
   return (
     <div className={cn('min-h-screen relative bg-transparent', isBlackTheme && 'black')}>
       {showIntro && <IntroOverlay onComplete={() => { setShowIntro(false); sessionStorage.setItem('intro_seen', 'true'); }} />}
-      <ParallaxScene />
       <SplashCursor />
       <Navbar isBlackTheme={isBlackTheme} onThemeToggle={toggleTheme} />
       <main>
