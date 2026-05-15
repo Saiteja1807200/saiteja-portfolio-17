@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Sparkles, Trash2 } from 'lucide-react';
+import { Bot, X, Send, Sparkles, Trash2 } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -142,7 +142,7 @@ const PortfolioChatbot = () => {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.15 }}
             >
-              <MessageCircle className="h-6 w-6" />
+              <Bot className="h-6 w-6" />
             </motion.span>
           )}
         </AnimatePresence>

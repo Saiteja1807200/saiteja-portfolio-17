@@ -78,7 +78,7 @@ Identifies fraudulent job postings and suspicious recruitment activities on onli
 - Location: Hyderabad, Telangana, India
 - LinkedIn: https://www.linkedin.com/in/saiteja-akinepelli
 - GitHub: https://github.com/Saiteja1807200
-- X (Twitter): https://x.com/IntrovertAF_03
+
 - Instagram: https://www.instagram.com/saitejaaa_1807
 - Resume: https://drive.google.com/file/d/1oLwn1GiXvy0uzpJzH79dZwFNo8MjWwTD/view?usp=drivesdk
 
