@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "@/components/PageTransition";
+import PortfolioChatbot from "@/components/PortfolioChatbot";
 import Index from "./pages/Index";
 import AboutPage from "./pages/About";
 import ResumePage from "./pages/Resume";
@@ -41,6 +42,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <AnimatedRoutes />
+        <PortfolioChatbot />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
