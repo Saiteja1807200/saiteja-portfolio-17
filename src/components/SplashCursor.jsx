@@ -64,7 +64,12 @@ function SplashCursor({
 
     let pointers = [new pointerPrototype()];
 
-    const { gl, ext } = getWebGLContext(canvas);
+    const ctxResult = getWebGLContext(canvas);
+    if (!ctxResult || !ctxResult.gl) {
+      console.warn('SplashCursor: WebGL unavailable, skipping effect.');
+      return;
+    }
+    const { gl, ext } = ctxResult;
     if (!ext.supportLinearFiltering) {
       config.DYE_RESOLUTION = 256;
       config.SHADING = false;
