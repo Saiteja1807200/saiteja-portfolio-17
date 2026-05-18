@@ -182,8 +182,11 @@ export default function Aurora(props: AuroraProps) {
     ctn.appendChild(gl.canvas);
 
     let animateId = 0;
+    let contextLost = false;
+
     const update = (t: number) => {
       animateId = requestAnimationFrame(update);
+      if (contextLost || document.hidden) return;
       const { time = t * 0.01, speed = 1.0 } = propsRef.current;
       if (program) {
         program.uniforms.uTime.value = time * speed * 0.1;
@@ -194,16 +197,35 @@ export default function Aurora(props: AuroraProps) {
           const c = new Color(hex);
           return [c.r, c.g, c.b];
         });
-        renderer.render({ scene: mesh });
+        try {
+          renderer.render({ scene: mesh });
+        } catch (e) {
+          // Swallow render errors from a lost/invalid context — handler below will recover.
+          console.warn("Aurora render skipped", e);
+        }
       }
     };
     animateId = requestAnimationFrame(update);
+
+    const handleContextLost = (e: Event) => {
+      e.preventDefault();
+      contextLost = true;
+      gl.canvas.style.visibility = "hidden";
+    };
+    const handleContextRestored = () => {
+      contextLost = false;
+      gl.canvas.style.visibility = "";
+    };
+    gl.canvas.addEventListener("webglcontextlost", handleContextLost as EventListener);
+    gl.canvas.addEventListener("webglcontextrestored", handleContextRestored);
 
     resize();
 
     return () => {
       cancelAnimationFrame(animateId);
       window.removeEventListener("resize", resize);
+      gl.canvas.removeEventListener("webglcontextlost", handleContextLost as EventListener);
+      gl.canvas.removeEventListener("webglcontextrestored", handleContextRestored);
       if (ctn && gl.canvas.parentNode === ctn) {
         ctn.removeChild(gl.canvas);
       }

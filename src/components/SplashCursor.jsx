@@ -680,12 +680,21 @@ function SplashCursor({
 
     function updateFrame() {
       if (!isActive) return;
-      const dt = calcDeltaTime();
-      if (resizeCanvas()) initFramebuffers();
-      updateColors(dt);
-      applyInputs();
-      step(dt);
-      render(null);
+      if (document.hidden || gl.isContextLost()) {
+        animationFrameId.current = requestAnimationFrame(updateFrame);
+        lastUpdateTime = Date.now();
+        return;
+      }
+      try {
+        const dt = calcDeltaTime();
+        if (resizeCanvas()) initFramebuffers();
+        updateColors(dt);
+        applyInputs();
+        step(dt);
+        render(null);
+      } catch (e) {
+        console.warn('SplashCursor frame skipped', e);
+      }
       animationFrameId.current = requestAnimationFrame(updateFrame);
     }
 
