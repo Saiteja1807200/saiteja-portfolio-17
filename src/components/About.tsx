@@ -11,32 +11,7 @@ import RequestAccessDialog from '@/components/RequestAccessDialog';
 
 const About = () => {
   const { hasAccess, checking } = useAccessToken();
-  const features = [
-    {
-      icon: <Brain className="h-10 w-10 text-primary" />,
-      title: 'Machine Learning',
-      description: 'Building intelligent systems with data-driven approaches',
-      items: ['Scikit-learn & XGBoost', 'Computer Vision (OpenCV)', 'NLP (NLTK)', 'Model Evaluation']
-    },
-    {
-      icon: <BookOpen className="h-10 w-10 text-primary" />,
-      title: 'Full Stack Development',
-      description: 'End-to-end web application development with modern tools',
-      items: ['React & TypeScript', 'PostgreSQL', 'REST APIs', 'Authentication & Auth Flows']
-    },
-    {
-      icon: <Users className="h-10 w-10 text-primary" />,
-      title: 'SDLC & Agile',
-      description: 'Structured development from requirements to deployment',
-      items: ['Requirement Analysis', 'Agile Sprints', 'Testing & QA', 'CI/CD & Deployment']
-    },
-    {
-      icon: <MessageSquare className="h-10 w-10 text-primary" />,
-      title: 'Communication',
-      description: 'Clear and effective collaboration across teams',
-      items: ['Technical Writing', 'Documentation', 'Cross-team Collaboration', 'Knowledge Sharing']
-    }
-  ];
+
 
   return (
     <section id="about" className="py-20">
