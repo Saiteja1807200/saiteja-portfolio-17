@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, BookOpen, Users, MessageSquare, Lock } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -11,32 +11,7 @@ import RequestAccessDialog from '@/components/RequestAccessDialog';
 
 const About = () => {
   const { hasAccess, checking } = useAccessToken();
-  const features = [
-    {
-      icon: <Brain className="h-10 w-10 text-primary" />,
-      title: 'Machine Learning',
-      description: 'Building intelligent systems with data-driven approaches',
-      items: ['Scikit-learn & XGBoost', 'Computer Vision (OpenCV)', 'NLP (NLTK)', 'Model Evaluation']
-    },
-    {
-      icon: <BookOpen className="h-10 w-10 text-primary" />,
-      title: 'Full Stack Development',
-      description: 'End-to-end web application development with modern tools',
-      items: ['React & TypeScript', 'PostgreSQL', 'REST APIs', 'Authentication & Auth Flows']
-    },
-    {
-      icon: <Users className="h-10 w-10 text-primary" />,
-      title: 'SDLC & Agile',
-      description: 'Structured development from requirements to deployment',
-      items: ['Requirement Analysis', 'Agile Sprints', 'Testing & QA', 'CI/CD & Deployment']
-    },
-    {
-      icon: <MessageSquare className="h-10 w-10 text-primary" />,
-      title: 'Communication',
-      description: 'Clear and effective collaboration across teams',
-      items: ['Technical Writing', 'Documentation', 'Cross-team Collaboration', 'Knowledge Sharing']
-    }
-  ];
+
 
   return (
     <section id="about" className="py-20">
@@ -122,31 +97,7 @@ const About = () => {
             )}
           </motion.div>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              className="bg-background/50 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-3 text-foreground">{feature.title}</h3>
-              <p className="text-foreground/70 text-sm mb-4">{feature.description}</p>
-              <ul className="space-y-2">
-                {feature.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-center gap-2 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-                    <span className="text-foreground/80">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+
       </div>
     </section>
   );
