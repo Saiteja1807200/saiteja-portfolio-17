@@ -32,7 +32,7 @@ const GitHubContributions = () => {
         >
           <div className="flex justify-center min-w-fit">
             <GitHubCalendar
-              username="tejapolio"
+              username="Saiteja1807200"
               blockSize={12}
               blockMargin={4}
               fontSize={14}
