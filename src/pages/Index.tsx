@@ -12,6 +12,7 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import SplashCursor from '@/components/SplashCursor';
+import GitHubContributions from '@/components/GitHubContributions';
 
 
 const Index = () => {
@@ -67,6 +68,7 @@ const Index = () => {
         <Education />
         <Projects initialExpandedId={expandProject} onExpandedChange={setExpandProject} />
         <Skills />
+        <GitHubContributions />
         <Contact />
       </main>
       <Footer />
