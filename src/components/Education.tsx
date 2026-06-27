@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Bookmark, Building } from 'lucide-react';
+import { GraduationCap, Bookmark } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Education = () => {
@@ -9,10 +9,18 @@ const Education = () => {
     {
       degree: "Masters in Computer Applications",
       institution: "Vaageswari College of Engineering",
-      period: "2023 - 2025",
+      period: "2023 - 2026",
       specialization: "Computer Science with focus on Machine Learning",
       icon: <GraduationCap className="h-6 w-6" />,
       color: "bg-blue-500"
+    },
+    {
+      degree: "B.SC Computer Science",
+      institution: "Chaitanya Degree College",
+      period: "Completed",
+      specialization: "Computer Science fundamentals",
+      icon: <GraduationCap className="h-6 w-6" />,
+      color: "bg-purple-500"
     },
     {
       degree: "Intermediate (MPC)",
@@ -21,14 +29,6 @@ const Education = () => {
       specialization: "Mathematics, Physics and Chemistry",
       icon: <Bookmark className="h-6 w-6" />,
       color: "bg-green-500"
-    },
-    {
-      degree: "Computer Science",
-      institution: "Chaitanya Degree College",
-      period: "Completed",
-      specialization: "Computer Science fundamentals",
-      icon: <Building className="h-6 w-6" />,
-      color: "bg-purple-500"
     }
   ];
 
