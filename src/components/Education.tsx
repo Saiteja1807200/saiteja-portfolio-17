@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Bookmark } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Education = () => {
@@ -27,7 +27,7 @@ const Education = () => {
       institution: "Sri Chaitanya Junior College",
       period: "Completed",
       specialization: "Mathematics, Physics and Chemistry",
-      icon: <Bookmark className="h-6 w-6" />,
+      icon: <GraduationCap className="h-6 w-6" />,
       color: "bg-green-500"
     }
   ];
