@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import SplitText from './SplitText';
 import Aurora from './Aurora';
+import resumePdf from '@/assets/Saiteja_Akinepelli_FullStack_Developer.pdf.asset.json';
 
 const Hero = () => {
   const scrollToAbout = () => {
