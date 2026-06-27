@@ -27,7 +27,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full inline-block mb-2">
+            <span className="px-3 py-1 text-sm font-medium bg-background/80 text-foreground backdrop-blur-sm border border-border/50 rounded-full inline-block mb-2">
               Full Stack Developer & ML Enthusiast
             </span>
           </motion.div>
