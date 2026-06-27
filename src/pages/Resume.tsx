@@ -71,7 +71,7 @@ const ResumePage = () => {
   };
 
   const downloadResume = () => {
-    window.open('https://drive.google.com/file/d/1oLwn1GiXvy0uzpJzH79dZwFNo8MjWwTD/view?usp=drivesdk', '_blank');
+    window.open(resumePdf.url, '_blank');
   };
 
   return (

@@ -62,7 +62,7 @@ const Hero = () => {
               <Link to="/contact">Get In Touch</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="https://drive.google.com/file/d/1oLwn1GiXvy0uzpJzH79dZwFNo8MjWwTD/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">View Resume</a>
+              <a href={resumePdf.url} target="_blank" rel="noopener noreferrer">View Resume</a>
             </Button>
           </motion.div>
         </div>
