@@ -71,9 +71,41 @@ const projects: Project[] = [
     ],
     icon: <ShieldCheck className="h-6 w-6" />,
     github: 'https://github.com/Saiteja1807200/online-recruitment-fraud-detection',
+    demo: '#',
     accentColor: 'from-emerald-500 to-teal-400',
   },
 ];
+
+// Per-technology brand colors for the badges (hue-based pill outlines)
+const TECH_COLORS: Record<string, string> = {
+  React: '#22d3a7',
+  'Next.js': '#3b82f6',
+  Supabase: '#3ecf8e',
+  PostgreSQL: '#38bdf8',
+  Resend: '#a855f7',
+  Vercel: '#d4a017',
+  Python: '#f59e0b',
+  OpenCV: '#22c55e',
+  'Tesseract OCR': '#06b6d4',
+  Pandas: '#8b5cf6',
+  'Scikit-learn': '#f97316',
+  NLTK: '#14b8a6',
+  XGBoost: '#ec4899',
+  FastAPI: '#a855f7',
+};
+
+const DEFAULT_TECH_COLOR = '#94a3b8';
+
+const techStyle = (tech: string): React.CSSProperties => {
+  const color = TECH_COLORS[tech] ?? DEFAULT_TECH_COLOR;
+  return {
+    color,
+    borderColor: `${color}66`,
+    backgroundColor: `${color}1a`,
+  };
+};
+
+
 
 interface ProjectsProps {
   initialExpandedId?: number | null;
