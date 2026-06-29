@@ -73,6 +73,24 @@ const projects: Project[] = [
     demo: '#',
     accentColor: 'from-emerald-500 to-teal-400',
   },
+  {
+    id: 4,
+    title: 'SOC Threat Detection',
+    subtitle: 'ML-Powered Cyber Security Framework',
+    description:
+      'ML-driven SOC framework that detects cyber threats, analyzes security logs and prioritizes incidents to reduce manual investigation and false positives.',
+    technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'MySQL', 'Cyber Security', 'HTML', 'CSS', 'JavaScript'],
+    features: [
+      'Automated threat detection and classification from security events and logs',
+      'Risk scoring and incident prioritization for faster SOC response',
+      'Web-based monitoring dashboard for real-time alert visualization',
+      'Model evaluation using accuracy, precision, recall and F1-score',
+    ],
+    icon: <Shield className="h-6 w-6" />,
+    github: '#',
+    demo: '#',
+    accentColor: 'from-red-500 to-orange-400',
+  },
 ];
 
 // Per-technology brand colors for the badges (hue-based pill outlines)
