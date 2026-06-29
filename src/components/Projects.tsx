@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
-import { ExternalLink, Github, X, Layers, Eye, ShieldCheck } from 'lucide-react';
+import { ExternalLink, Github, X, Layers, Eye, ShieldCheck, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -73,6 +73,24 @@ const projects: Project[] = [
     demo: '#',
     accentColor: 'from-emerald-500 to-teal-400',
   },
+  {
+    id: 4,
+    title: 'SOC Threat Detection',
+    subtitle: 'ML-Powered Cyber Security Framework',
+    description:
+      'ML-driven SOC framework that detects cyber threats, analyzes security logs and prioritizes incidents to reduce manual investigation and false positives.',
+    technologies: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'MySQL', 'Cyber Security', 'HTML', 'CSS', 'JavaScript'],
+    features: [
+      'Automated threat detection and classification from security events and logs',
+      'Risk scoring and incident prioritization for faster SOC response',
+      'Web-based monitoring dashboard for real-time alert visualization',
+      'Model evaluation using accuracy, precision, recall and F1-score',
+    ],
+    icon: <Shield className="h-6 w-6" />,
+    github: '#',
+    demo: '#',
+    accentColor: 'from-red-500 to-orange-400',
+  },
 ];
 
 // Per-technology brand colors for the badges (hue-based pill outlines)
@@ -91,6 +109,14 @@ const TECH_COLORS: Record<string, string> = {
   NLTK: '#14b8a6',
   XGBoost: '#ec4899',
   FastAPI: '#a855f7',
+  NumPy: '#4f46e5',
+  MySQL: '#f59e0b',
+  HTML: '#e34c26',
+  CSS: '#264de4',
+  JavaScript: '#f7df1e',
+  'Cyber Security': '#10b981',
+  'Machine Learning': '#e11d48',
+  'Data Analytics': '#0ea5e9',
 };
 
 const DEFAULT_TECH_COLOR = '#94a3b8';
@@ -155,12 +181,13 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
 
         <LayoutGroup>
           {/* Cards grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {projects.map((project, index) => {
               const lightColors: Record<number, string> = {
                 0: 'hsl(210 100% 50%)',
                 1: 'hsl(270 80% 60%)',
                 2: 'hsl(160 80% 45%)',
+                3: 'hsl(15 90% 55%)',
               };
               return (
                 <motion.div

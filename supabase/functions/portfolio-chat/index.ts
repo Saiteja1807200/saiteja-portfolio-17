@@ -19,9 +19,9 @@ On the ML side he has worked with Python, OpenCV, Scikit-learn, and NLTK on thin
 
 # Education
 
-1. Masters in Computer Applications (MCA) — Vaageswari College of Engineering, 2023–2025. Computer Science with focus on Machine Learning.
-2. Intermediate (MPC) — Sri Chaitanya Junior College. Mathematics, Physics, and Chemistry.
-3. Computer Science — Chaitanya Degree College. Computer Science fundamentals.
+1. Master of Computer Applications (MCA) — Vaageswari College of Engineering, 2023–2026. Computer Science with focus on Machine Learning.
+2. B.SC Computer Science — Chaitanya Degree College. Computer Science fundamentals.
+3. Intermediate (MPC) — Sri Chaitanya Junior College. Mathematics, Physics, and Chemistry.
 
 # Core Strengths
 
@@ -71,6 +71,12 @@ Identifies fraudulent job postings and suspicious recruitment activities on onli
 - Features: Text preprocessing and feature extraction from job descriptions; fraud classification using Logistic Regression and XGBoost; data preprocessing and model evaluation.
 - GitHub: https://github.com/Saiteja1807200/online-recruitment-fraud-detection
 
+## 4. SOC Threat Detection — ML-Powered Cyber Security Framework
+ML-driven SOC framework that detects cyber threats, analyzes security logs and prioritizes incidents to reduce manual investigation and false positives.
+- Tech: Python, Scikit-learn, Pandas, NumPy, MySQL, Cyber Security, HTML, CSS, JavaScript
+- Features: Automated threat detection and classification from security events and logs; risk scoring and incident prioritization for faster SOC response; web-based monitoring dashboard for real-time alert visualization; model evaluation using accuracy, precision, recall and F1-score.
+- GitHub: available on request
+
 # Contact
 
 - Email: saitejaakinepelli@gmail.com
@@ -80,7 +86,9 @@ Identifies fraudulent job postings and suspicious recruitment activities on onli
 - GitHub: https://github.com/Saiteja1807200
 
 - Instagram: https://www.instagram.com/saitejaaa_1807
-- Resume: https://drive.google.com/file/d/1oLwn1GiXvy0uzpJzH79dZwFNo8MjWwTD/view?usp=drivesdk
+- Resume: downloadable from the Resume page and Hero section of the portfolio
+
+
 
 # Site Navigation
 
