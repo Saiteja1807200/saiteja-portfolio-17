@@ -181,12 +181,13 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
 
         <LayoutGroup>
           {/* Cards grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {projects.map((project, index) => {
               const lightColors: Record<number, string> = {
                 0: 'hsl(210 100% 50%)',
                 1: 'hsl(270 80% 60%)',
                 2: 'hsl(160 80% 45%)',
+                3: 'hsl(15 90% 55%)',
               };
               return (
                 <motion.div
