@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
-import { ExternalLink, Github, ChevronRight, X, Layers, Eye, Cpu, ShieldCheck } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { ExternalLink, Github, X, Layers, Eye, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
