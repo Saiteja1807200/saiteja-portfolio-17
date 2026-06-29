@@ -86,7 +86,9 @@ ML-driven SOC framework that detects cyber threats, analyzes security logs and p
 - GitHub: https://github.com/Saiteja1807200
 
 - Instagram: https://www.instagram.com/saitejaaa_1807
-- Resume: https://drive.google.com/file/d/1oLwn1GiXvy0uzpJzH79dZwFNo8MjWwTD/view?usp=drivesdk
+- Resume: downloadable from the Resume page and Hero section of the portfolio
+
+
 
 # Site Navigation
 
