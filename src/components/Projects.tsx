@@ -53,6 +53,7 @@ const projects: Project[] = [
     ],
     icon: <Eye className="h-6 w-6" />,
     github: 'https://github.com/Saiteja1807200/automatic-number-plate-detection-using-opencv',
+    demo: '#',
     accentColor: 'from-violet-500 to-purple-400',
   },
   {
