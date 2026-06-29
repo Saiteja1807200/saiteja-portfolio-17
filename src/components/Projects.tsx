@@ -109,6 +109,14 @@ const TECH_COLORS: Record<string, string> = {
   NLTK: '#14b8a6',
   XGBoost: '#ec4899',
   FastAPI: '#a855f7',
+  NumPy: '#4f46e5',
+  MySQL: '#f59e0b',
+  HTML: '#e34c26',
+  CSS: '#264de4',
+  JavaScript: '#f7df1e',
+  'Cyber Security': '#10b981',
+  'Machine Learning': '#e11d48',
+  'Data Analytics': '#0ea5e9',
 };
 
 const DEFAULT_TECH_COLOR = '#94a3b8';
