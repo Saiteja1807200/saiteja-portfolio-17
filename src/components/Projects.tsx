@@ -194,35 +194,41 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
 
                     <p className="text-foreground/70 text-sm mb-4 line-clamp-2">{project.description}</p>
 
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          style={techStyle(tech)}
+                          className="text-xs font-medium px-3 py-1 rounded-full border"
+                        >
                           {tech}
-                        </Badge>
+                        </span>
                       ))}
-                      {project.technologies.length > 3 && (
-                        <Badge variant="secondary" className="text-[10px] px-2 py-0.5 bg-white/10 text-foreground/80 border-white/10">
-                          +{project.technologies.length - 3}
-                        </Badge>
-                      )}
                     </div>
 
-                    <div className="flex items-center justify-between">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="flex items-center gap-1.5 text-foreground/70 hover:text-foreground text-sm font-medium transition-colors"
-                        >
-                          <Github className="h-4 w-4" /> GitHub
-                        </a>
-                      )}
-                      <div className="flex items-center text-primary text-sm font-medium group-hover:gap-2 gap-1 transition-all ml-auto">
-                        View Details <ChevronRight className="h-4 w-4" />
-                      </div>
+                    <div className="border-t border-border/60 pt-4 flex items-center gap-4">
+                      <a
+                        href={project.github || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 text-foreground/70 hover:text-foreground text-sm font-medium transition-colors"
+                      >
+                        <Github className="h-4 w-4" /> View Code
+                      </a>
+                      <span className="text-foreground/30">·</span>
+                      <a
+                        href={project.demo || '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors"
+                      >
+                        <span className="h-2 w-2 rounded-full bg-emerald-400" /> Live
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
                     </div>
+
                   </motion.div>
                 </motion.div>
               );
