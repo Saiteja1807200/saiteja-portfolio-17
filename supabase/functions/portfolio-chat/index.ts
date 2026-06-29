@@ -19,9 +19,9 @@ On the ML side he has worked with Python, OpenCV, Scikit-learn, and NLTK on thin
 
 # Education
 
-1. Masters in Computer Applications (MCA) — Vaageswari College of Engineering, 2023–2025. Computer Science with focus on Machine Learning.
-2. Intermediate (MPC) — Sri Chaitanya Junior College. Mathematics, Physics, and Chemistry.
-3. Computer Science — Chaitanya Degree College. Computer Science fundamentals.
+1. Master of Computer Applications (MCA) — Vaageswari College of Engineering, 2023–2026. Computer Science with focus on Machine Learning.
+2. B.SC Computer Science — Chaitanya Degree College. Computer Science fundamentals.
+3. Intermediate (MPC) — Sri Chaitanya Junior College. Mathematics, Physics, and Chemistry.
 
 # Core Strengths
 
