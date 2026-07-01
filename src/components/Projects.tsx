@@ -87,7 +87,7 @@ const projects: Project[] = [
       'Model evaluation using accuracy, precision, recall and F1-score',
     ],
     icon: <Shield className="h-6 w-6" />,
-    github: '#',
+    github: 'https://github.com/Saiteja1807200/soc-ml-framework',
     demo: '#',
     accentColor: 'from-red-500 to-orange-400',
   },
