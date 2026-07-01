@@ -75,7 +75,16 @@ Identifies fraudulent job postings and suspicious recruitment activities on onli
 ML-driven SOC framework that detects cyber threats, analyzes security logs and prioritizes incidents to reduce manual investigation and false positives.
 - Tech: Python, Scikit-learn, Pandas, NumPy, MySQL, Cyber Security, HTML, CSS, JavaScript
 - Features: Automated threat detection and classification from security events and logs; risk scoring and incident prioritization for faster SOC response; web-based monitoring dashboard for real-time alert visualization; model evaluation using accuracy, precision, recall and F1-score.
-- GitHub: available on request
+- GitHub: https://github.com/Saiteja1807200/soc-ml-framework
+- Related publication: User-Centric Machine Learning Framework for Cyber Security Operations Center
+
+# Publications
+
+## User-Centric Machine Learning Framework for Cyber Security Operations Center
+- Authors: Akinepelli Saiteja, Mrs. T. Mounika, Dr. P. Venkateshwarlu
+- Affiliation: Vaageswari College of Engineering (JNTUH), Karimnagar
+- Summary: A machine-learning-driven SOC framework that reduces alert fatigue by automatically prioritizing security events, classifying genuine threats and visualizing incidents through a real-time monitoring dashboard.
+- PDF: available in the Publications section of the portfolio
 
 # Contact
 
