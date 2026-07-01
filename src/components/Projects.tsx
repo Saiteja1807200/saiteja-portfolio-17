@@ -3,6 +3,7 @@ import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { ExternalLink, Github, X, Layers, Eye, ShieldCheck, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
 
 interface Project {
   id: number;
@@ -132,6 +133,17 @@ const techStyle = (tech: string): React.CSSProperties => {
 
 
 
+const isLiveDemoAvailable = (demo?: string): boolean =>
+  Boolean(demo && demo !== '#' && !demo.startsWith('#'));
+
+const handleDemoClick = (e: React.MouseEvent, demo?: string) => {
+  if (!isLiveDemoAvailable(demo)) {
+    e.preventDefault();
+    e.stopPropagation();
+    toast('Still building — live demo coming soon', { icon: '🔧' });
+  }
+};
+
 interface ProjectsProps {
   initialExpandedId?: number | null;
   onExpandedChange?: (id: number | null) => void;
@@ -247,10 +259,21 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
                         href={project.demo || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors"
+                        onClick={(e) => handleDemoClick(e, project.demo)}
+                        className={cn(
+                          'flex items-center gap-1.5 text-sm font-medium transition-colors',
+                          isLiveDemoAvailable(project.demo)
+                            ? 'text-emerald-400 hover:text-emerald-300'
+                            : 'text-foreground/40 hover:text-foreground/60 cursor-help'
+                        )}
                       >
-                        <span className="h-2 w-2 rounded-full bg-emerald-400" /> Live
+                        <span
+                          className={cn(
+                            'h-2 w-2 rounded-full',
+                            isLiveDemoAvailable(project.demo) ? 'bg-emerald-400' : 'bg-foreground/40'
+                          )}
+                        />{' '}
+                        Live
                         <ExternalLink className="h-3.5 w-3.5" />
                       </a>
                     </div>
@@ -367,18 +390,31 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
                           </Button>
                         )}
                         {selectedProject.demo !== undefined && (
-                          <Button
-                            asChild
-                            variant="outline"
-                            className={cn(
-                              'gap-2 rounded-xl border-primary/30 hover:bg-primary/10 hover:border-primary/50 font-semibold px-6',
-                            )}
-                          >
-                            <a href={selectedProject.demo || '#'} target="_blank" rel="noopener noreferrer">
+                          isLiveDemoAvailable(selectedProject.demo) ? (
+                            <Button
+                              asChild
+                              variant="outline"
+                              className={cn(
+                                'gap-2 rounded-xl border-primary/30 hover:bg-primary/10 hover:border-primary/50 font-semibold px-6',
+                              )}
+                            >
+                              <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="h-4 w-4" />
+                                Live Demo
+                              </a>
+                            </Button>
+                          ) : (
+                            <Button
+                              variant="outline"
+                              className={cn(
+                                'gap-2 rounded-xl border-primary/30 hover:bg-primary/10 hover:border-primary/50 font-semibold px-6',
+                              )}
+                              onClick={() => toast('Still building — live demo coming soon', { icon: '🔧' })}
+                            >
                               <ExternalLink className="h-4 w-4" />
                               Live Demo
-                            </a>
-                          </Button>
+                            </Button>
+                          )
                         )}
                       </div>
                     )}
