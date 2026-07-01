@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Education from '@/components/Education';
+import Publications from '@/components/Publications';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
