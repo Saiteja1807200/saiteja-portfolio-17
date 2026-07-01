@@ -133,6 +133,17 @@ const techStyle = (tech: string): React.CSSProperties => {
 
 
 
+const isLiveDemoAvailable = (demo?: string): boolean =>
+  Boolean(demo && demo !== '#' && !demo.startsWith('#'));
+
+const handleDemoClick = (e: React.MouseEvent, demo?: string) => {
+  if (!isLiveDemoAvailable(demo)) {
+    e.preventDefault();
+    e.stopPropagation();
+    toast('Still building — live demo coming soon', { icon: '🔧' });
+  }
+};
+
 interface ProjectsProps {
   initialExpandedId?: number | null;
   onExpandedChange?: (id: number | null) => void;
