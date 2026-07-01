@@ -67,6 +67,7 @@ const Index = () => {
         <Hero />
         <About />
         <Education />
+        <Publications />
         <Projects initialExpandedId={expandProject} onExpandedChange={setExpandProject} />
         <Skills />
         <GitHubContributions />
