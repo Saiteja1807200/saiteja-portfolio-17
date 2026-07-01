@@ -259,10 +259,21 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
                         href={project.demo || '#'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors"
+                        onClick={(e) => handleDemoClick(e, project.demo)}
+                        className={cn(
+                          'flex items-center gap-1.5 text-sm font-medium transition-colors',
+                          isLiveDemoAvailable(project.demo)
+                            ? 'text-emerald-400 hover:text-emerald-300'
+                            : 'text-foreground/40 hover:text-foreground/60 cursor-help'
+                        )}
                       >
-                        <span className="h-2 w-2 rounded-full bg-emerald-400" /> Live
+                        <span
+                          className={cn(
+                            'h-2 w-2 rounded-full',
+                            isLiveDemoAvailable(project.demo) ? 'bg-emerald-400' : 'bg-foreground/40'
+                          )}
+                        />{' '}
+                        Live
                         <ExternalLink className="h-3.5 w-3.5" />
                       </a>
                     </div>
