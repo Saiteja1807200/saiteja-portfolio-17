@@ -390,18 +390,31 @@ const Projects = ({ initialExpandedId, onExpandedChange }: ProjectsProps) => {
                           </Button>
                         )}
                         {selectedProject.demo !== undefined && (
-                          <Button
-                            asChild
-                            variant="outline"
-                            className={cn(
-                              'gap-2 rounded-xl border-primary/30 hover:bg-primary/10 hover:border-primary/50 font-semibold px-6',
-                            )}
-                          >
-                            <a href={selectedProject.demo || '#'} target="_blank" rel="noopener noreferrer">
+                          isLiveDemoAvailable(selectedProject.demo) ? (
+                            <Button
+                              asChild
+                              variant="outline"
+                              className={cn(
+                                'gap-2 rounded-xl border-primary/30 hover:bg-primary/10 hover:border-primary/50 font-semibold px-6',
+                              )}
+                            >
+                              <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
+                                <ExternalLink className="h-4 w-4" />
+                                Live Demo
+                              </a>
+                            </Button>
+                          ) : (
+                            <Button
+                              variant="outline"
+                              className={cn(
+                                'gap-2 rounded-xl border-primary/30 hover:bg-primary/10 hover:border-primary/50 font-semibold px-6',
+                              )}
+                              onClick={() => toast('Still building — live demo coming soon', { icon: '🔧' })}
+                            >
                               <ExternalLink className="h-4 w-4" />
                               Live Demo
-                            </a>
-                          </Button>
+                            </Button>
+                          )
                         )}
                       </div>
                     )}
