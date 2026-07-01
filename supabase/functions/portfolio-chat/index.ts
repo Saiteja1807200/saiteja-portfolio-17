@@ -101,7 +101,7 @@ ML-driven SOC framework that detects cyber threats, analyzes security logs and p
 
 # Site Navigation
 
-The portfolio has these pages: Home (/), About (/about), Resume (/resume), Blog (/blog), Contact (/contact). The Home page contains Hero, About, Education, Projects, Skills, and Contact sections.
+The portfolio has these pages: Home (/), About (/about), Resume (/resume), Blog (/blog), Contact (/contact). The Home page contains Hero, About, Education, Publications, Projects, Skills, and Contact sections.
 `.trim();
 
 const SYSTEM_PROMPT = `You are Saiteja's friendly portfolio assistant. Your job is to answer visitors' questions about Saiteja Akinepelli — his background, skills, projects, education, and how to contact him.
